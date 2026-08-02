@@ -5,6 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Language Academy – Professional English Training</title>
 <link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="AI Language Academy - أكاديمية متخصصة في تعليم اللغة الإنجليزية بأسلوب عملي. كورسات برايفت وجروبات، أونلاين وأوف لاين في المعادي، منهج متوافق مع الإطار الأوروبي CEFR من A1 لـ C1. احجز حصة تجريبية مجانية.">
+<meta name="keywords" content="تعليم انجليزي, كورس انجليزي, دروس انجليزي اونلاين, انجليزي المعادي, CEFR, AI Language Academy">
+<meta name="author" content="AI Language Academy">
+<link rel="canonical" href="https://aimanagement725-ops.github.io/ai-language-academy/">
+
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Language Academy | تكلم إنجليزي بثقة وبلا خوف">
+<meta property="og:description" content="كورسات إنجليزي مخصوصة — برايفت وجروبات صغيرة — بأسلوب عملي يركز على الكلام الحقيقي في الشغل والحياة. احجز حصة تجريبية مجانية.">
+<meta property="og:image" content="https://aimanagement725-ops.github.io/ai-language-academy/logo.png">
+<meta property="og:url" content="https://aimanagement725-ops.github.io/ai-language-academy/">
+<meta property="og:locale" content="ar_AR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Language Academy | تكلم إنجليزي بثقة وبلا خوف">
+<meta name="twitter:description" content="كورسات إنجليزي مخصوصة — برايفت وجروبات صغيرة — بأسلوب عملي يركز على الكلام الحقيقي.">
+<meta name="twitter:image" content="https://aimanagement725-ops.github.io/ai-language-academy/logo.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
@@ -66,19 +85,106 @@
   .hero-orb-1 { width: 500px; height: 500px; background: var(--purple); top: -200px; left: -200px; }
   .hero-orb-2 { width: 350px; height: 350px; background: var(--pink); bottom: -120px; right: -140px; }
 
-  .hero-logo {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    width: 110px;
-    height: auto;
-    border-radius: 16px;
-    z-index: 2;
+  /* ===== NAVBAR ===== */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.2s;
+  }
+  .navbar.scrolled { box-shadow: 0 4px 24px rgba(117,57,189,0.1); }
+
+  .navbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    position: relative;
   }
 
-  @media (max-width: 760px) {
-    .hero-logo { width: 72px; top: 16px; left: 16px; }
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 15px;
+    flex-shrink: 0;
   }
+  .navbar-logo { width: 38px; height: 38px; border-radius: 9px; object-fit: cover; }
+
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .navbar-link {
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 14px;
+    border-radius: 30px;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .navbar-link:hover { background: var(--purple-light); color: var(--purple); }
+
+  .navbar-cta {
+    background: var(--purple);
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 30px;
+    white-space: nowrap;
+    margin-right: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .navbar-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(117,57,189,0.3); }
+
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .navbar-toggle span { width: 24px; height: 2px; background: var(--text-dark); border-radius: 2px; }
+
+  @media (max-width: 900px) {
+    .navbar-toggle { display: flex; }
+    .navbar-links {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      background: #fff;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      border-bottom: 1px solid var(--border);
+    }
+    .navbar-links.open { max-height: 500px; }
+    .navbar-link { text-align: center; border-radius: 0; padding: 14px; }
+    .navbar-cta { text-align: center; margin: 10px 16px; }
+  }
+
+  section[id] { scroll-margin-top: 76px; }
 
   .hero-eyebrow {
     display: inline-block;
@@ -831,9 +937,29 @@
 </head>
 <body>
 
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="navbar-brand">
+      <img src="logo.png" alt="AI Language Academy" class="navbar-logo">
+      <span>AI Language Academy</span>
+    </a>
+    <button class="navbar-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navbar-links" id="navLinks">
+      <a href="#" class="navbar-link">الرئيسية</a>
+      <a href="#about" class="navbar-link">من نحن</a>
+      <a href="#why" class="navbar-link">ليه أسلوبنا مختلف</a>
+      <a href="#packages" class="navbar-link">الباقات</a>
+      <a href="#compare" class="navbar-link">قارن بنفسك</a>
+      <a href="#reviews" class="navbar-link">آراء الطلاب</a>
+      <a href="#register" class="navbar-cta">احجز حصة مجانية</a>
+    </div>
+  </div>
+</nav>
+
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <img src="logo.png" alt="AI Language Academy" class="hero-logo">
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
 
@@ -957,7 +1083,7 @@
 </section>
 
 <!-- ===== WHY MY APPROACH WORKS ===== -->
-<section class="why-section">
+<section class="why-section" id="why">
   <div class="section-inner">
     <span class="section-tag">ليه أسلوبنا مختلف</span>
     <h2 class="section-title">مش حصص عادية — ده تدريب حقيقي</h2>
@@ -1066,7 +1192,7 @@
 </section>
 
 <!-- ===== COMPARISON ===== -->
-<section class="compare-section">
+<section class="compare-section" id="compare">
   <div class="section-inner">
     <span class="section-tag">ليه مش المراكز التقليدية</span>
     <h2 class="section-title">الفرق واضح — اختار الطريق الصح</h2>
@@ -1111,7 +1237,7 @@
 </section>
 
 <!-- ===== REVIEWS ===== -->
-<section class="reviews-section">
+<section class="reviews-section" id="reviews">
   <div class="section-inner">
     <span class="section-tag">كلام الطلاب الحقيقي</span>
     <h2 class="section-title">نتائج بيتكلموا عن نفسهم</h2>
@@ -1236,6 +1362,28 @@
   <strong>AI Language Academy</strong> · English Language Training · Cairo, Egypt<br>
   © 2025 جميع الحقوق محفوظة
 </footer>
+
+<script>
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  var navbar = document.getElementById('navbar');
+
+  navToggle.addEventListener('click', function () {
+    var isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  window.addEventListener('scroll', function () {
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
 
 </body>
 </html>
