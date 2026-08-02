@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aimanagement725-ops.github.io/ai-language-academy/sitemap.xml
