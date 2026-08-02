@@ -66,6 +66,20 @@
   .hero-orb-1 { width: 500px; height: 500px; background: var(--purple); top: -200px; left: -200px; }
   .hero-orb-2 { width: 350px; height: 350px; background: var(--pink); bottom: -120px; right: -140px; }
 
+  .hero-logo {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 110px;
+    height: auto;
+    border-radius: 16px;
+    z-index: 2;
+  }
+
+  @media (max-width: 760px) {
+    .hero-logo { width: 72px; top: 16px; left: 16px; }
+  }
+
   .hero-eyebrow {
     display: inline-block;
     font-size: 13px;
@@ -819,6 +833,7 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
+  <img src="logo.png" alt="AI Language Academy" class="hero-logo">
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
 
