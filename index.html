@@ -7,6 +7,8 @@
   <link rel="icon" type="image/png" href="logo.png">
   <meta name="description" content="AI Language Academy - كورسات إنجليزي برايفت وجروبات، أونلاين وأوف لاين في المعادي، منهج CEFR معتمد من A1 إلى C1.">
   <link rel="canonical" href="https://www.ailangacademy.com/">
+  
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HLY3DT6F4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,10 +16,35 @@
     gtag('js', new Date());
     gtag('config', 'G-4HLY3DT6F4');
   </script>
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="AI Language Academy | تكلم إنجليزي بثقة">
   <meta property="og:description" content="كورسات إنجليزي مخصوصة — بأسلوب عملي يركز على الكلام الحقيقي في الشغل والحياة.">
   <meta property="og:image" content="https://www.ailangacademy.com/logo.png">
+
+  <!-- Local Business Schema (#17) with Updated Map Link -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "AI Language Academy",
+    "url": "https://www.ailangacademy.com",
+    "logo": "https://www.ailangacademy.com/logo.png",
+    "description": "Professional English language training with practical conversational focus for career advancement.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "أمام محطة مترو المعادي - أعلى بنك QNB",
+      "addressLocality": "المعادي",
+      "addressRegion": "القاهرة",
+      "addressCountry": "EG"
+    },
+    "hasMap": "https://maps.app.goo.gl/2M1hTdewei1fqVT87",
+    "priceRange": "EGP 900 - EGP 2000",
+    "openingHours": "Mo-Sa 10:00-22:00"
+  }
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -48,6 +75,15 @@
     .pain-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; max-width: 850px; margin: 50px auto; align-items: center; }
     .pain-box { background: var(--purple); color: #fff; padding: 40px; border-radius: 20px; text-align: center; font-size: 18px; font-weight: 700; }
     .pain-item { background: var(--purple-light); padding: 16px 20px; border-radius: 12px; margin-bottom: 12px; border: 1px solid var(--border); }
+    
+    /* Location Banner on Homepage */
+    .location-preview { background: #faf8ff; border: 1px solid var(--border); border-radius: 20px; padding: 35px 25px; text-align: center; max-width: 850px; margin: 50px auto 20px; }
+    .location-preview h2 { font-size: 24px; font-weight: 800; margin-bottom: 10px; color: var(--purple-dark); }
+    .location-preview p { color: var(--text-mid); font-size: 15px; margin-bottom: 20px; }
+    .location-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .btn-loc-map { background: var(--purple); color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 30px; font-weight: 700; font-size: 14px; }
+    .btn-loc-details { background: #fff; color: var(--purple); border: 1.5px solid var(--purple); text-decoration: none; padding: 12px 24px; border-radius: 30px; font-weight: 700; font-size: 14px; }
+
     .whatsapp-float { position: fixed; bottom: 24px; left: 24px; z-index: 999; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
     .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
     .footer { background: #0f0720; color: #94a3b8; padding: 35px 20px; text-align: center; font-size: 14px; margin-top: 60px; }
@@ -117,6 +153,20 @@
           <strong>جربت كورسات كتير ومفيش نتيجة؟</strong>
           <p style="color: var(--text-light); font-size: 14px; margin-top: 4px;">نظامنا يحدد نقاط ضعفك بدقة ويضع خطة فردية لعلاجها فوراً.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- LOCATION PREVIEW SECTION -->
+    <div class="location-preview">
+      <h2>📍 فروعنا ومقر التدريب</h2>
+      <p>أمام محطة مترو المعادي مباشرة، أعلى بنك QNB (ومتاح أيضاً الحضور أونلاين عبر Google Meet)</p>
+      <div class="location-links">
+        <a href="https://maps.app.goo.gl/2M1hTdewei1fqVT87" target="_blank" rel="noopener noreferrer" class="btn-loc-map">
+          فتح الموقع في Google Maps ↗
+        </a>
+        <a href="location.html" class="btn-loc-details">
+          عرض تفاصيل المقر والخريطة
+        </a>
       </div>
     </div>
 
