@@ -49,7 +49,6 @@
     }
     body { font-family: 'Cairo', sans-serif; background: #fff; color: var(--text-dark); direction: rtl; }
 
-    /* RESPONSIVE HEADER */
     .top-header {
       position: sticky; top: 0; z-index: 1000;
       background: rgba(255,255,255,0.98); backdrop-filter: blur(8px);
@@ -102,16 +101,24 @@
     .location-preview { background: #faf8ff; border: 1px solid var(--border); border-radius: 20px; padding: 30px 20px; text-align: center; max-width: 850px; margin: 40px auto 20px; }
     .btn-loc-map { background: var(--purple); color: #fff; text-decoration: none; padding: 12px 22px; border-radius: 30px; font-weight: 700; font-size: 13px; display: inline-block; margin: 5px; }
 
+    /* FOOTER & SOCIAL MEDIA */
+    .footer { background: #0f0720; color: #94a3b8; padding: 35px 20px; text-align: center; font-size: 14px; margin-top: 50px; border-radius: 16px; }
+    .footer a { color: #c4b5fd; text-decoration: none; margin: 0 6px; }
+    .footer-social { display: flex; justify-content: center; gap: 14px; margin-bottom: 20px; }
+    .footer-social a {
+      width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center; transition: 0.2s; margin: 0;
+    }
+    .footer-social a:hover { background: var(--purple); transform: translateY(-3px); }
+    .footer-social svg { width: 18px; height: 18px; fill: #fff; }
+
     .whatsapp-float { position: fixed; bottom: 20px; left: 20px; z-index: 999; width: 54px; height: 54px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
     .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
-    .footer { background: #0f0720; color: #94a3b8; padding: 30px 20px; text-align: center; font-size: 14px; margin-top: 50px; border-radius: 16px; }
-    .footer a { color: #c4b5fd; text-decoration: none; margin: 0 6px; }
 
-    /* MOBILE ADJUSTMENTS (NO OVERFLOW) */
     @media (max-width: 700px) {
       .top-header { padding: 0 12px; height: 60px; }
-      .brand-logo span { display: none; } /* Hides the text so only the logo icon displays */
-      .sidebar-toggle-btn span.btn-label { display: none; } /* Shows only the ☰ icon */
+      .brand-logo span { display: none; }
+      .sidebar-toggle-btn span.btn-label { display: none; }
       .sidebar-toggle-btn { padding: 7px 11px; font-size: 16px; }
       .cta-btn-nav { padding: 8px 14px; font-size: 12px; }
       .left-sidebar { position: fixed; left: -100%; top: 60px; z-index: 999; }
@@ -196,9 +203,23 @@
     </div>
 
     <footer class="footer">
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61573888299542" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H7.9V12h2.6V9.8c0-2.6 1.5-4 3.9-4 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/ai.laguageacademy/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.06 1.1.05 1.8.22 2.5.47a5 5 0 0 1 1.8 1.17 5 5 0 0 1 1.17 1.8c.25.7.42 1.4.47 2.5.05 1 .06 1.4.06 4.1s0 3.1-.06 4.1c-.05 1.1-.22 1.8-.47 2.5a5 5 0 0 1-1.17 1.8 5 5 0 0 1-1.8 1.17c-.7.25-1.4.42-2.5.47-1 .05-1.4.06-4.1.06s-3.1 0-4.1-.06c-1.1-.05-1.8-.22-2.5-.47a5 5 0 0 1-1.8-1.17 5 5 0 0 1-1.17-1.8c-.25-.7-.42-1.4-.47-2.5C2 15.1 2 14.7 2 12s0-3.1.06-4.1c.05-1.1.22-1.8.47-2.5a5 5 0 0 1 1.17-1.8A5 5 0 0 1 5.5 2.53c.7-.25 1.4-.42 2.5-.47C8.9 2 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>
+        </a>
+        <a href="https://wa.me/201017534096" target="_blank" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/ai-language-academy/" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.4 20.4h-3.5v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.6H9.5V9h3.4v1.6h.05c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.15 2.3 4.15 5.3v6.3zM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM7 20.4H3.5V9H7v11.4z"/></svg>
+        </a>
+      </div>
       <p style="color: #e2e8f0; margin-bottom: 8px;">⚡ <strong>وعد الرد السريع:</strong> نتواصل معك عبر واتساب لتأكيد الحصة التجريبية خلال ساعتين عمل كحد أقصى.</p>
       <p><a href="privacy-policy.html">سياسة الخصوصية</a> · <a href="thank-you.html">تأكيد الحجز</a> · <a href="location.html">مقر المعادي</a></p>
-      <p style="margin-top: 12px; font-size: 13px;">© 2025 AI Language Academy</p>
+      <p style="margin-top: 12px; font-size: 13px;">© 2025 AI Language Academy · English Training · Cairo, Egypt</p>
     </footer>
   </main>
 </div>
