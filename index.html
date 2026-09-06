@@ -8,7 +8,6 @@
   <meta name="description" content="AI Language Academy - كورسات إنجليزي برايفت وجروبات، أونلاين وأوف لاين في المعادي، منهج CEFR معتمد من A1 إلى C1.">
   <link rel="canonical" href="https://www.ailangacademy.com/">
   
-  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HLY3DT6F4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,13 +16,11 @@
     gtag('config', 'G-4HLY3DT6F4');
   </script>
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="AI Language Academy | تكلم إنجليزي بثقة">
   <meta property="og:description" content="كورسات إنجليزي مخصوصة — بأسلوب عملي يركز على الكلام الحقيقي في الشغل والحياة.">
   <meta property="og:image" content="https://www.ailangacademy.com/logo.png">
 
-  <!-- Local Business Schema (#17) with Updated Map Link -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,7 +28,6 @@
     "name": "AI Language Academy",
     "url": "https://www.ailangacademy.com",
     "logo": "https://www.ailangacademy.com/logo.png",
-    "description": "Professional English language training with practical conversational focus for career advancement.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "أمام محطة مترو المعادي - أعلى بنك QNB",
@@ -39,72 +35,106 @@
       "addressRegion": "القاهرة",
       "addressCountry": "EG"
     },
-    "hasMap": "https://maps.app.goo.gl/2M1hTdewei1fqVT87",
-    "priceRange": "EGP 900 - EGP 2000",
-    "openingHours": "Mo-Sa 10:00-22:00"
+    "hasMap": "https://maps.app.goo.gl/2M1hTdewei1fqVT87"
   }
   </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --purple: #7539bd; --purple-dark: #4a2280; --purple-light: #f3eeff; --pink: #d6acd7; --text-dark: #1a1225; --text-mid: #4a3d6b; --text-light: #7873a8; --border: rgba(117,57,189,0.12); --sidebar-w: 260px; }
+    :root {
+      --purple: #7539bd; --purple-dark: #4a2280; --purple-light: #f3eeff;
+      --text-dark: #1a1225; --text-mid: #4a3d6b; --text-light: #7873a8;
+      --border: rgba(117,57,189,0.12); --sidebar-w: 260px;
+    }
     body { font-family: 'Cairo', sans-serif; background: #fff; color: var(--text-dark); direction: rtl; }
-    .top-header { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
-    .top-header-right { display: flex; align-items: center; gap: 12px; }
-    .sidebar-toggle { background: #f8fafc; border: 1px solid var(--border); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-weight: 700; color: var(--purple); font-family: inherit; font-size: 14px; }
-    .brand-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 17px; color: var(--text-dark); }
-    .brand-logo img { width: 38px; height: 38px; border-radius: 10px; }
-    .cta-btn-nav { background: var(--purple); color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 22px; border-radius: 30px; transition: 0.2s; }
+
+    /* RESPONSIVE HEADER */
+    .top-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border); height: 65px;
+      display: flex; align-items: center; justify-content: space-between; padding: 0 20px;
+    }
+    .brand-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 17px; color: var(--text-dark); flex-shrink: 0; }
+    .brand-logo img { width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0; }
+    .top-header-left { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .sidebar-toggle-btn {
+      background: #faf8ff; border: 1.5px solid var(--border); padding: 8px 14px;
+      border-radius: 30px; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 13px;
+      color: var(--purple); display: flex; align-items: center; gap: 5px; transition: 0.2s;
+    }
+    .sidebar-toggle-btn:hover { background: var(--purple-light); border-color: var(--purple); }
+    .cta-btn-nav {
+      background: var(--purple); color: #fff; text-decoration: none; font-size: 13px;
+      font-weight: 800; padding: 9px 18px; border-radius: 30px; transition: 0.2s; white-space: nowrap;
+    }
     .cta-btn-nav:hover { background: var(--purple-dark); }
-    .layout-wrap { display: flex; min-height: calc(100vh - 70px); }
-    .left-sidebar { width: var(--sidebar-w); background: #faf8ff; border-right: 1px solid var(--border); position: sticky; top: 70px; height: calc(100vh - 70px); overflow-y: auto; padding: 24px 16px; order: 2; flex-shrink: 0; }
+
+    .layout-wrap { display: flex; min-height: calc(100vh - 65px); }
+    .left-sidebar {
+      width: var(--sidebar-w); background: #faf8ff; border-right: 1px solid var(--border);
+      position: sticky; top: 65px; height: calc(100vh - 65px); overflow-y: auto; padding: 24px 16px;
+      order: 2; flex-shrink: 0; transition: width 0.3s ease, padding 0.3s ease, opacity 0.2s ease;
+    }
+    .left-sidebar.collapsed { width: 0; padding: 0; opacity: 0; overflow: hidden; border-right: none; }
     .sidebar-menu { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-    .sidebar-btn { display: flex; align-items: center; gap: 10px; padding: 11px 14px; text-decoration: none; color: var(--text-mid); font-weight: 700; font-size: 14px; border-radius: 10px; transition: 0.2s; }
-    .sidebar-btn:hover { background: var(--purple-light); color: var(--purple); transform: translateX(-3px); }
+    .sidebar-btn {
+      display: flex; align-items: center; gap: 10px; padding: 11px 14px; text-decoration: none;
+      color: var(--text-mid); font-weight: 700; font-size: 14px; border-radius: 10px; transition: 0.2s;
+    }
+    .sidebar-btn:hover { background: var(--purple-light); color: var(--purple); }
     .sidebar-btn.active { background: var(--purple); color: #fff; }
-    .main-content { flex: 1; min-width: 0; order: 1; padding: 50px 30px; }
-    .hero { text-align: center; max-width: 800px; margin: 0 auto 50px; }
-    .hero-title { font-size: clamp(34px, 5vw, 54px); font-weight: 900; line-height: 1.35; margin-bottom: 20px; }
+
+    .main-content { flex: 1; min-width: 0; order: 1; padding: 40px 24px; }
+    .hero { text-align: center; max-width: 800px; margin: 0 auto 40px; }
+    .hero-title { font-size: clamp(30px, 5vw, 52px); font-weight: 900; line-height: 1.35; margin-bottom: 18px; }
     .hero-title span { color: var(--purple); }
-    .hero-subtitle { font-size: 18px; color: var(--text-mid); line-height: 1.8; margin-bottom: 30px; }
-    .btn-main { display: inline-block; padding: 16px 44px; background: var(--purple); color: #fff; border-radius: 50px; font-size: 17px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px rgba(117,57,189,0.3); transition: 0.2s; }
-    .btn-main:hover { transform: translateY(-3px); }
-    .stats-strip { background: var(--purple); color: #fff; padding: 24px; border-radius: 16px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; margin: 40px auto; max-width: 850px; }
-    .stat-num { font-size: 32px; font-weight: 900; }
-    .pain-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; max-width: 850px; margin: 50px auto; align-items: center; }
-    .pain-box { background: var(--purple); color: #fff; padding: 40px; border-radius: 20px; text-align: center; font-size: 18px; font-weight: 700; }
+    .hero-subtitle { font-size: 17px; color: var(--text-mid); line-height: 1.8; margin-bottom: 25px; }
+    .btn-main { display: inline-block; padding: 15px 40px; background: var(--purple); color: #fff; border-radius: 50px; font-size: 16px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px rgba(117,57,189,0.3); }
+
+    .stats-strip { background: var(--purple); color: #fff; padding: 22px; border-radius: 16px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; margin: 35px auto; max-width: 850px; }
+    .stat-num { font-size: 30px; font-weight: 900; }
+    .pain-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 25px; max-width: 850px; margin: 40px auto; align-items: center; }
+    .pain-box { background: var(--purple); color: #fff; padding: 35px 25px; border-radius: 20px; text-align: center; font-size: 17px; font-weight: 700; }
     .pain-item { background: var(--purple-light); padding: 16px 20px; border-radius: 12px; margin-bottom: 12px; border: 1px solid var(--border); }
     
-    /* Location Banner on Homepage */
-    .location-preview { background: #faf8ff; border: 1px solid var(--border); border-radius: 20px; padding: 35px 25px; text-align: center; max-width: 850px; margin: 50px auto 20px; }
-    .location-preview h2 { font-size: 24px; font-weight: 800; margin-bottom: 10px; color: var(--purple-dark); }
-    .location-preview p { color: var(--text-mid); font-size: 15px; margin-bottom: 20px; }
-    .location-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-    .btn-loc-map { background: var(--purple); color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 30px; font-weight: 700; font-size: 14px; }
-    .btn-loc-details { background: #fff; color: var(--purple); border: 1.5px solid var(--purple); text-decoration: none; padding: 12px 24px; border-radius: 30px; font-weight: 700; font-size: 14px; }
+    .location-preview { background: #faf8ff; border: 1px solid var(--border); border-radius: 20px; padding: 30px 20px; text-align: center; max-width: 850px; margin: 40px auto 20px; }
+    .btn-loc-map { background: var(--purple); color: #fff; text-decoration: none; padding: 12px 22px; border-radius: 30px; font-weight: 700; font-size: 13px; display: inline-block; margin: 5px; }
 
-    .whatsapp-float { position: fixed; bottom: 24px; left: 24px; z-index: 999; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
-    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
-    .footer { background: #0f0720; color: #94a3b8; padding: 35px 20px; text-align: center; font-size: 14px; margin-top: 60px; }
-    .footer a { color: #c4b5fd; text-decoration: none; margin: 0 8px; }
-    @media (max-width: 900px) {
-      .left-sidebar { position: fixed; left: -100%; top: 70px; z-index: 999; transition: left 0.3s; }
-      .left-sidebar.open { left: 0; }
+    .whatsapp-float { position: fixed; bottom: 20px; left: 20px; z-index: 999; width: 54px; height: 54px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+    .footer { background: #0f0720; color: #94a3b8; padding: 30px 20px; text-align: center; font-size: 14px; margin-top: 50px; border-radius: 16px; }
+    .footer a { color: #c4b5fd; text-decoration: none; margin: 0 6px; }
+
+    /* MOBILE ADJUSTMENTS (NO OVERFLOW) */
+    @media (max-width: 700px) {
+      .top-header { padding: 0 12px; height: 60px; }
+      .brand-logo span { display: none; } /* Hides the text so only the logo icon displays */
+      .sidebar-toggle-btn span.btn-label { display: none; } /* Shows only the ☰ icon */
+      .sidebar-toggle-btn { padding: 7px 11px; font-size: 16px; }
+      .cta-btn-nav { padding: 8px 14px; font-size: 12px; }
+      .left-sidebar { position: fixed; left: -100%; top: 60px; z-index: 999; }
+      .left-sidebar.mobile-open { left: 0; width: 260px; }
       .pain-grid, .stats-strip { grid-template-columns: 1fr; }
+      .main-content { padding: 30px 16px; }
     }
   </style>
 </head>
 <body>
+
 <header class="top-header">
-  <div class="top-header-right">
-    <button class="sidebar-toggle" id="sidebarToggle">☰ الصفحات</button>
-    <a href="index.html" class="brand-logo">
-      <img src="logo.png" alt="Logo">
-      <span>AI Language Academy</span>
-    </a>
+  <a href="index.html" class="brand-logo">
+    <img src="logo.png" alt="Logo">
+    <span>AI Language Academy</span>
+  </a>
+  <div class="top-header-left">
+    <button class="sidebar-toggle-btn" id="sidebarToggle" aria-label="القائمة">
+      <span>☰</span>
+      <span class="btn-label">الصفحات</span>
+    </button>
+    <a href="https://forms.gle/StuCpvrdM7G3LL6C7" target="_blank" class="cta-btn-nav">احجز مجاناً ✨</a>
   </div>
-  <a href="https://forms.gle/StuCpvrdM7G3LL6C7" target="_blank" class="cta-btn-nav">احجز حصة مجانية ✨</a>
 </header>
 
 <div class="layout-wrap">
@@ -130,15 +160,15 @@
     </div>
 
     <div class="stats-strip">
-      <div><div class="stat-num">8</div><div>مستويات CEFR معتمدة</div></div>
-      <div><div class="stat-num">100%</div><div>رضا الطلاب المشتركين</div></div>
+      <div><div class="stat-num">8</div><div>مستويات CEFR</div></div>
+      <div><div class="stat-num">100%</div><div>رضا الطلاب</div></div>
       <div><div class="stat-num">أونلاين & أوفلاين</div><div>Google Meet + المعادي</div></div>
     </div>
 
     <div class="pain-grid">
       <div class="pain-box">
-        <div style="font-size: 64px; font-weight: 900; margin-bottom: 10px;">85%</div>
-        <p>من خريجي الجامعات بيواجهوا صعوبة حقيقية في التحدث بطلاقة خلال مقابلات العمل والاجتماعات.</p>
+        <div style="font-size: 54px; font-weight: 900; margin-bottom: 8px;">85%</div>
+        <p>من خريجي الجامعات بيواجهوا صعوبة في التحدث بطلاقة خلال مقابلات العمل والاجتماعات.</p>
       </div>
       <div>
         <div class="pain-item">
@@ -156,34 +186,32 @@
       </div>
     </div>
 
-    <!-- LOCATION PREVIEW SECTION -->
     <div class="location-preview">
-      <h2>📍 فروعنا ومقر التدريب</h2>
-      <p>أمام محطة مترو المعادي مباشرة، أعلى بنك QNB (ومتاح أيضاً الحضور أونلاين عبر Google Meet)</p>
-      <div class="location-links">
-        <a href="https://maps.app.goo.gl/2M1hTdewei1fqVT87" target="_blank" rel="noopener noreferrer" class="btn-loc-map">
-          فتح الموقع في Google Maps ↗
-        </a>
-        <a href="location.html" class="btn-loc-details">
-          عرض تفاصيل المقر والخريطة
-        </a>
+      <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">📍 فروعنا ومقر التدريب</h2>
+      <p style="color: var(--text-mid); font-size: 14px; margin-bottom: 15px;">أمام محطة مترو المعادي مباشرة، أعلى بنك QNB (ومتاح أيضاً الحضور أونلاين عبر Google Meet)</p>
+      <div>
+        <a href="https://maps.app.goo.gl/2M1hTdewei1fqVT87" target="_blank" rel="noopener noreferrer" class="btn-loc-map">Google Maps ↗</a>
+        <a href="location.html" style="display: inline-block; background: #fff; color: var(--purple); border: 1.5px solid var(--purple); text-decoration: none; padding: 11px 20px; border-radius: 30px; font-weight: 700; font-size: 13px; margin: 5px;">تفاصيل المقر والخريطة</a>
       </div>
     </div>
 
     <footer class="footer">
-      <p style="color: #e2e8f0; margin-bottom: 10px;">⚡ <strong>وعد الرد السريع:</strong> نتواصل معك عبر واتساب لتأكيد موعد الحصة التجريبية خلال ساعتين عمل كحد أقصى.</p>
+      <p style="color: #e2e8f0; margin-bottom: 8px;">⚡ <strong>وعد الرد السريع:</strong> نتواصل معك عبر واتساب لتأكيد الحصة التجريبية خلال ساعتين عمل كحد أقصى.</p>
       <p><a href="privacy-policy.html">سياسة الخصوصية</a> · <a href="thank-you.html">تأكيد الحجز</a> · <a href="location.html">مقر المعادي</a></p>
-      <p style="margin-top: 15px; font-size: 13px;">© 2025 AI Language Academy · All rights reserved.</p>
+      <p style="margin-top: 12px; font-size: 13px;">© 2025 AI Language Academy</p>
     </footer>
   </main>
 </div>
 
-<a href="https://wa.me/201017534096" target="_blank" class="whatsapp-float" aria-label="WhatsApp Chat">
-  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg>
-</a>
+<a href="https://wa.me/201017534096" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg></a>
 
 <script>
-  document.getElementById('sidebarToggle').onclick = () => document.getElementById('leftSidebar').classList.toggle('open');
+  const toggleBtn = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('leftSidebar');
+  toggleBtn.addEventListener('click', function() {
+    if (window.innerWidth > 700) { sidebar.classList.toggle('collapsed'); }
+    else { sidebar.classList.toggle('mobile-open'); }
+  });
 </script>
 </body>
 </html>
