@@ -18,7 +18,7 @@
     }
   </script>
 
-  <!-- Google Analytics 4 (GA4) -->
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HLY3DT6F4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -27,7 +27,7 @@
     gtag('config', 'G-4HLY3DT6F4');
   </script>
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code with PageView and ViewContent -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -39,6 +39,13 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1814758486181859');
     fbq('track', 'PageView');
+    
+    // Meta Standard Event: ViewContent
+    fbq('track', 'ViewContent', {
+      content_name: 'AI Language Academy Course Landing',
+      content_category: 'Education',
+      content_type: 'product'
+    });
   </script>
   <noscript>
     <img height="1" width="1" style="display:none" 
@@ -602,7 +609,7 @@
 <!-- FLOATING WHATSAPP BUTTON -->
 <a href="https://wa.me/201017534096" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg></a>
 
-<!-- SCRIPT: SMOOTH JUMP WITHOUT URL HASH + ACTIVE SCROLLSPY + META EVENT TRACKING -->
+<!-- SCRIPT: SMOOTH JUMP WITHOUT URL HASH + ACTIVE SCROLLSPY + ADVANCED META TRACKING -->
 <script>
   const toggleBtn = document.getElementById('sidebarToggle');
   const sidebar = document.getElementById('leftSidebar');
@@ -669,25 +676,45 @@
     });
   });
 
-  // Meta Pixel Event Tracking
-  // 1. Track Lead on Booking button clicks
+  // ==========================================
+  // META PIXEL STANDARD EVENTS IMPLEMENTATION
+  // ==========================================
+
+  // 1. StartTrial & Lead Events (Triggered on trial booking form clicks)
   document.querySelectorAll('a[href*="forms.gle"]').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof fbq === 'function') {
+        fbq('track', 'StartTrial', {
+          content_name: 'Free Trial Session',
+          content_category: 'English Training',
+          currency: 'EGP',
+          value: 0.00
+        });
         fbq('track', 'Lead', {
-          content_name: 'Free Trial Class Booking',
-          currency: 'EGP'
+          content_name: 'Free Trial Registration Form'
         });
       }
     });
   });
 
-  // 2. Track Contact on WhatsApp clicks
+  // 2. Contact Event (Triggered on WhatsApp clicks)
   document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof fbq === 'function') {
         fbq('track', 'Contact', {
-          content_name: 'WhatsApp Consultation'
+          content_name: 'WhatsApp Consultation Chat',
+          contact_method: 'WhatsApp'
+        });
+      }
+    });
+  });
+
+  // 3. FindLocation Event (Triggered when user clicks Google Maps link to visit branch)
+  document.querySelectorAll('a[href*="maps.app.goo.gl"], a[href*="maps.google.com"]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'FindLocation', {
+          content_name: 'Maadi Metro Branch Directions'
         });
       }
     });
