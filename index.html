@@ -148,7 +148,7 @@
     }
     .cta-btn-nav:hover { background: var(--purple-dark); transform: translateY(-1px); }
 
-    /* ===== LAYOUT & SIDEBAR ===== */
+    /* ===== LAYOUT & SIDEBAR (CLOSED BY DEFAULT ON DESKTOP) ===== */
     .layout-wrap { display: flex; min-height: calc(100vh - 65px); }
     .left-sidebar {
       width: var(--sidebar-w); background: #faf8ff; border-right: 1px solid var(--border);
@@ -243,9 +243,26 @@
     .map-wrap iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
     .map-action-btn { display: inline-block; background: var(--purple); color: #fff; text-decoration: none; padding: 13px 28px; border-radius: 30px; font-weight: 700; font-size: 14px; margin-top: 10px; }
 
-    /* Policy Styling & Tables */
-    .policy-box { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 28px; margin-top: 20px; box-shadow: 0 4px 20px rgba(117,57,189,0.04); }
-    .policy-table { width: 100%; border-collapse: collapse; margin: 18px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+    /* Horizontal Policy Blocks (Full-Width Flow) */
+    .policy-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(117,57,189,0.04);
+      width: 100%;
+    }
+    .policy-box h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--purple-dark);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .policy-table { width: 100%; border-collapse: collapse; margin: 16px 0 6px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
     .policy-table th, .policy-table td { padding: 14px 18px; font-size: 14px; text-align: right; border-bottom: 1px solid var(--border); }
     .policy-table th { background: var(--purple-light); color: var(--purple-dark); font-weight: 800; }
     .policy-table td.pct { font-weight: 800; color: var(--purple); }
@@ -265,9 +282,9 @@
     .whatsapp-float { position: fixed; bottom: 20px; left: 20px; z-index: 999; width: 54px; height: 54px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
     .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
 
-    /* Responsive: Clean mobile view without cramming */
+    /* Responsive */
     @media (max-width: 950px) {
-      .top-nav-links { display: none !important; } /* Hidden on mobile to prevent cramming */
+      .top-nav-links { display: none !important; }
     }
 
     @media (max-width: 700px) {
@@ -281,6 +298,7 @@
       .pain-grid, .stats-strip, .grid-2, .grid-3 { grid-template-columns: 1fr; }
       .compare-table th, .compare-table td { padding: 10px; font-size: 13px; }
       .policy-table th, .policy-table td { padding: 10px; font-size: 12px; }
+      .policy-box { padding: 20px 16px; }
       section { padding: 40px 16px; scroll-margin-top: 60px; }
     }
   </style>
@@ -289,13 +307,12 @@
 
 <!-- TOP HEADER -->
 <header class="top-header">
-  <!-- Right: Brand Logo -->
   <a href="#hero" class="brand-logo js-jump-link">
     <img src="logo.png" alt="Logo">
     <span>AI Language Academy</span>
   </a>
 
-  <!-- Center: Direct Section Jump Buttons for Desktop (Hidden on mobile) -->
+  <!-- Center Quick Nav Buttons for Desktop -->
   <nav class="top-nav-links" aria-label="التنقل السريع">
     <a href="#about" class="top-nav-link js-jump-link">من نحن والفريق</a>
     <a href="#packages" class="top-nav-link js-jump-link">الباقات والأسعار</a>
@@ -303,9 +320,9 @@
     <a href="#faq" class="top-nav-link js-jump-link">الأسئلة الشائعة</a>
   </nav>
 
-  <!-- Left: Drawer Toggle + Action CTA -->
+  <!-- Left Controls -->
   <div class="top-header-left">
-    <button class="sidebar-toggle-btn" id="sidebarToggle" aria-label="القائمة الكاملة">
+    <button class="sidebar-toggle-btn" id="sidebarToggle" aria-label="القائمة">
       <span>☰</span>
       <span class="btn-label">الصفحات</span>
     </button>
@@ -315,8 +332,8 @@
 
 <div class="layout-wrap">
 
-  <!-- LEFT SIDEBAR -->
-  <aside class="left-sidebar" id="leftSidebar">
+  <!-- LEFT SIDEBAR: CLOSED BY DEFAULT (has 'collapsed' class) -->
+  <aside class="left-sidebar collapsed" id="leftSidebar">
     <ul class="sidebar-menu">
       <li><a href="#hero" class="sidebar-btn js-jump-link active">🏠 الرئيسية</a></li>
       <li><a href="#about" class="sidebar-btn js-jump-link">👥 من نحن والفريق</a></li>
@@ -331,7 +348,7 @@
     </ul>
   </aside>
 
-  <!-- MAIN ALL-IN-ONE CONTENT -->
+  <!-- MAIN CONTENT -->
   <main class="main-content">
 
     <!-- 1. HERO SECTION -->
@@ -605,17 +622,17 @@
       </div>
     </section>
 
-    <!-- 9. CANCELLATION & REFUND POLICY SECTION -->
+    <!-- 9. CANCELLATION & REFUND POLICY SECTION (HORIZONTAL FULL-WIDTH CARDS) -->
     <section id="refund" style="background: #ffffff;">
       <div class="section-inner">
         <span class="section-tag">الشفافية والضمان</span>
-        <h2 class="section-title">ملخص سياسة الإلغاء والاسترداد المالي</h2>
-        <p class="section-subtitle">نلتزم في AI Language Academy بأعلى درجات الوضوح والمرونة لحفظ حقوق طلابنا وضمان تجربة تعليمية مريحة.</p>
+        <h2 class="section-title">سياسة الإلغاء والاسترداد المالي</h2>
+        <p class="section-subtitle">نلتزم في AI Language Academy بأعلى درجات الوضوح والمرونة لحفظ حقوق طلابنا وضمان تجربة تعليمية مريحة وموثوقة.</p>
 
-        <!-- 1. Refund Table -->
+        <!-- 1. Refund Schedule Table (Horizontal Box) -->
         <div class="policy-box">
-          <h3 style="font-size: 18px; font-weight: 800; color: var(--purple-dark); margin-bottom: 8px;">1. نسب الاسترداد المالي والجدول الزمني</h3>
-          <p style="color: var(--text-mid); font-size: 14px; margin-bottom: 12px;">تُحدد نسبة المبلغ المسترد بدقة حسب توقيت تقديم طلب الإلغاء الرسمي:</p>
+          <h3>1. نسب الاسترداد المالي والجدول الزمني</h3>
+          <p style="color: var(--text-mid); font-size: 14px; margin-bottom: 12px;">تُحدد نسبة المبلغ المسترد بدقة حسب توقيت تقديم طلب الإلغاء الرسمي للأكاديمية:</p>
           
           <table class="policy-table">
             <thead>
@@ -645,32 +662,35 @@
           </table>
         </div>
 
-        <!-- 2. Alternatives & Private Sessions -->
-        <div class="grid-2" style="margin-top: 20px;">
-          <div class="policy-box" style="margin-top: 0;">
-            <h3 style="font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 8px;">2. بدائل الاسترداد المالي</h3>
-            <ul style="color: var(--text-mid); font-size: 14px; line-height: 1.8; margin-right: 18px;">
-              <li><strong>تجميد الدورة (التأجيل):</strong> إمكانية تأجيل واستئناف الحصص المتبقية لمدة أقصاها أسبوعان فقط.</li>
-              <li><strong>تحويل الرصيد:</strong> تحويل المبلغ المتبقي إلى طالب آخر (صديق أو فرد من العائلة) لاستخدامه في دورة أخرى.</li>
-            </ul>
-
-            <h3 style="font-size: 17px; font-weight: 800; color: var(--purple-dark); margin: 18px 0 8px;">3. طريقة تقديم الطلب ومعالجته</h3>
-            <ul style="color: var(--text-mid); font-size: 14px; line-height: 1.8; margin-right: 18px;">
-              <li><strong>قناة التواصل:</strong> تُرسل جميع طلبات الإلغاء أو الاسترداد أو التجميد عبر واتساب الأكاديمية الرسمي.</li>
-              <li><strong>التنفيذ:</strong> يُرد المبلغ بنفس وسيلة الدفع الأصلية خلال 3 إلى 5 أيام عمل من تاريخ الموافقة.</li>
-            </ul>
-          </div>
-
-          <div class="policy-box" style="margin-top: 0;">
-            <h3 style="font-size: 17px; font-weight: 800; color: var(--purple-dark); margin-bottom: 8px;">4. قواعد وإجراءات الحصص الفردية (Private)</h3>
-            <ul style="color: var(--text-mid); font-size: 14px; line-height: 1.8; margin-right: 18px;">
-              <li><strong>فترة الإشعار:</strong> الإبلاغ عبر واتساب قبل 24 ساعة على الأقل لإلغاء أو تأجيل أي حصة مقررة.</li>
-              <li><strong>الإلغاء المتأخر والغياب:</strong> تُحسب الحصة مستنفذة ولا تُعوض عند الإلغاء قبل أقل من 24 ساعة أو الغياب دون عذر مسبق.</li>
-              <li><strong>مدة إنهاء الدورة:</strong> يجب إتمام جميع الساعات خلال 5 أسابيع كحد أقصى (4 أسابيع مدة الكورس + أسبوع سماح)، وتسقط أي ساعات متبقية بعدها.</li>
-              <li><strong>الإلغاء من جانب الأكاديمية:</strong> عند إلغاء حصة من قبل الأكاديمية أو المدرس، يُعوض الطالب بحصة بديلة في نفس الأسبوع مع إمكانية منح حصة إضافية مجانية كتعويض.</li>
-            </ul>
-          </div>
+        <!-- 2. Alternatives (Horizontal Box) -->
+        <div class="policy-box">
+          <h3>2. بدائل الاسترداد المالي</h3>
+          <ul style="color: var(--text-mid); font-size: 14px; line-height: 1.8; margin-right: 18px;">
+            <li><strong>تجميد الدورة (التأجيل):</strong> إمكانية تأجيل واستئناف الحصص المتبقية لمدة أقصاها أسبوعان فقط.</li>
+            <li><strong>تحويل الرصيد:</strong> تحويل المبلغ المتبقي إلى طالب آخر (صديق أو فرد من العائلة) لاستخدامه في دورة أخرى.</li>
+          </ul>
         </div>
+
+        <!-- 3. Request Method (Horizontal Box) -->
+        <div class="policy-box">
+          <h3>3. طريقة تقديم الطلب ومعالجته</h3>
+          <ul style="color: var(--text-mid); font-size: 14px; line-height: 1.8; margin-right: 18px;">
+            <li><strong>قناة التواصل:</strong> تُرسل جميع طلبات الإلغاء أو الاسترداد أو التجميد حصرياً عبر تطبيق واتساب الرسمي للأكاديمية.</li>
+            <li><strong>التنفيذ:</strong> يُرد المبلغ بنفس وسيلة الدفع الأصلية خلال 3 إلى 5 أيام عمل من تاريخ الموافقة الرسمية.</li>
+          </ul>
+        </div>
+
+        <!-- 4. Private Sessions Rules (Horizontal Box) -->
+        <div class="policy-box">
+          <h3>4. قواعد وإجراءات الحصص الفردية (Private)</h3>
+          <ul style="color: var(--text-mid); font-size: 14px; line-height: 1.8; margin-right: 18px;">
+            <li><strong>فترة الإشعار:</strong> الإبلاغ عبر واتساب قبل 24 ساعة على الأقل لإلغاء أو تأجيل أي حصة مقررة.</li>
+            <li><strong>الإلغاء المتأخر والغياب:</strong> تُحسب الحصة مستنفذة ولا تُعوض عند الإلغاء قبل أقل من 24 ساعة أو الغياب دون عذر مسبق.</li>
+            <li><strong>مدة إنهاء الدورة:</strong> يجب إتمام جميع الساعات خلال 5 أسابيع كحد أقصى (4 أسابيع مدة الكورس + أسبوع سماح)، وتسقط أي ساعات متبقية بعدها.</li>
+            <li><strong>الإلغاء من جانب الأكاديمية:</strong> عند إلغاء حصة من قبل الأكاديمية أو المدرس، يُعوض الطالب بحصة بديلة في نفس الأسبوع مع إمكانية منح حصة إضافية مجانية كتعويض.</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
