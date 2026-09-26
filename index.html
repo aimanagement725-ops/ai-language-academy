@@ -207,23 +207,81 @@
 
     /* Grids & Cards */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 35px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
     .card { background: var(--purple-light); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
     .card h3 { font-size: 18px; margin-bottom: 8px; font-weight: 800; }
     .card p { color: var(--text-mid); font-size: 14px; line-height: 1.7; }
 
-    /* ===== TEAM SECTION ===== */
-    .team-grid-2x2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 30px;
+    /* ===== ASSIM IBRAHIM (OPTION A: EXECUTIVE SPOTLIGHT BANNER) ===== */
+    .founder-card {
+      background: #ffffff;
+      border: 2px solid var(--purple);
+      border-radius: 24px;
+      padding: 35px 30px;
+      margin-bottom: 35px;
+      box-shadow: 0 10px 35px rgba(117, 57, 189, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
     }
-    .team-card {
+    .founder-badge {
+      position: absolute;
+      top: -14px;
+      right: 30px;
+      background: var(--purple);
+      color: #ffffff;
+      padding: 4px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 4px 15px rgba(117, 57, 189, 0.3);
+    }
+    .founder-photo-wrap {
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .founder-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      border: 4px solid var(--purple);
+      box-shadow: 0 8px 25px rgba(117, 57, 189, 0.2);
+      display: block;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+    .founder-content {
+      flex: 1;
+      text-align: right;
+    }
+    .founder-name {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .founder-role {
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 13.5px;
+      margin-bottom: 14px;
+    }
+    .founder-bio {
+      color: var(--text-mid);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* ===== TEACHERS' CARDS WITH MINIMALIST BULLETS ===== */
+    .teacher-card {
       background: #ffffff;
       border: 1.5px solid var(--border);
-      border-radius: 22px;
-      padding: 30px 24px;
+      border-radius: 20px;
+      padding: 26px 20px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -231,42 +289,62 @@
       box-shadow: 0 4px 20px rgba(117,57,189,0.04);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .team-card:hover {
+    .teacher-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 35px rgba(117,57,189,0.1);
     }
-    .team-photo {
-      width: 120px;
-      height: 120px;
+    .teacher-photo {
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center 20%;
       border: 3.5px solid var(--purple);
-      margin-bottom: 15px;
+      margin-bottom: 14px;
       box-shadow: 0 6px 20px rgba(117, 57, 189, 0.15);
       background-color: #f8fafc;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       transform: translateZ(0);
     }
-    .team-name {
-      font-size: 20px;
+    .teacher-name {
+      font-size: 19px;
       font-weight: 900;
       color: var(--text-dark);
       margin-bottom: 4px;
     }
-    .team-role {
+    .teacher-role {
       color: var(--purple);
       font-weight: 700;
-      font-size: 13px;
+      font-size: 12.5px;
       margin-bottom: 14px;
       line-height: 1.4;
     }
-    .team-bio {
-      color: var(--text-mid);
-      font-size: 13.5px;
-      line-height: 1.75;
+    .team-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0 0;
       text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    .team-bullets li {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      position: relative;
+      padding-right: 14px;
+    }
+    .team-bullets li::before {
+      content: "•";
+      color: var(--purple);
+      font-size: 18px;
+      position: absolute;
+      right: 0;
+      top: -2px;
+      font-weight: bold;
     }
 
     /* Packages */
@@ -286,7 +364,7 @@
     .td-us { background: var(--purple-light); color: var(--purple); font-weight: 700; text-align: center; }
     .td-them { background: #fafafa; color: #dc2626; text-align: center; }
 
-    /* ===== REVIEWS & STARS ===== */
+    /* Reviews */
     .rev-card { background: var(--purple-light); border: 1px solid var(--border); border-radius: 18px; padding: 25px; }
     .rev-card.featured { background: var(--purple); color: #fff; }
     .review-stars {
@@ -347,7 +425,7 @@
       padding: 80px 24px;
     }
     .booking-card {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto;
       background: #ffffff;
       padding: 45px 35px;
@@ -438,7 +516,19 @@
       .left-sidebar.mobile-open {
         left: 0;
       }
-      .team-grid-2x2, .pain-grid, .stats-strip, .grid-2, .grid-3, .form-grid-2 {
+      .founder-card {
+        flex-direction: column;
+        padding: 35px 20px 25px;
+        text-align: center;
+      }
+      .founder-content {
+        text-align: right;
+      }
+      .founder-badge {
+        right: 50%;
+        transform: translateX(50%);
+      }
+      .grid-3, .pain-grid, .stats-strip, .grid-2, .form-grid-2 {
         grid-template-columns: 1fr;
       }
       .compare-table th, .compare-table td { padding: 10px; font-size: 13px; }
@@ -542,57 +632,62 @@
         <h2 class="section-title">أكاديمية تركز على نتائجك العملية في الشغل</h2>
         <p class="section-subtitle">AI Language Academy هي أكاديمية متخصصة في تدريب اللغة الإنجليزية المهنية لسد فجوة التواصل الوظيفي لدى خريجي الجامعات والمحترفين. نعتمد منهجاً متوافقاً مع الإطار الأوروبي (CEFR) من A1 إلى C1 بنموذج مدمج (أونلاين لايف عبر Google Meet وحضوري في مقرنا بالمعادي).</p>
         
-        <h3 style="font-size: 24px; font-weight: 800; margin-top: 40px; text-align: center;">فريق العمل والمدربين</h3>
+        <h3 style="font-size: 24px; font-weight: 800; margin-top: 40px; text-align: center; margin-bottom: 30px;">فريق العمل والمدربين</h3>
 
-        <!-- BALANCED 2x2 TEAM GRID -->
-        <div class="team-grid-2x2">
-
-          <!-- 1. عاصم ابراهيم -->
-          <div class="team-card">
-            <img src="Assim%20Ibrahim.jpg" alt="عاصم ابراهيم" class="team-photo">
-            <h4 class="team-name">عاصم ابراهيم</h4>
-            <p class="team-role">Founder, Operations & Technical Manager | English Instructor</p>
-            <p class="team-bio">
-              مدرّس إنجليزي معتمد، ومؤسس ومدير العمليات للأكاديمية، بخبرة أكثر من 6 سنوات في تدريس الإنجليزي وإدارة المنظومات التعليمية. حاصل على دبلومة في إدارة الأعمال (Diploma in Business Management) من معهد IAB البريطاني.
+        <!-- ASSIM IBRAHIM: OPTION A EXECUTIVE SPOTLIGHT BANNER -->
+        <div class="founder-card">
+          <div class="founder-badge">المؤسس ومدير العمليات</div>
+          <div class="founder-photo-wrap">
+            <img src="Assim%20Ibrahim.jpg" alt="عاصم ابراهيم" class="founder-photo">
+          </div>
+          <div class="founder-content">
+            <h4 class="founder-name">عاصم ابراهيم</h4>
+            <p class="founder-role">Founder, Operations & Technical Manager | English Instructor</p>
+            <p class="founder-bio">
+              مدرّس إنجليزي معتمد، ومؤسس ومدير العمليات للأكاديمية، بخبرة أكثر من 7 سنوات في تدريس الإنجليزي وإدارة المنظومات التعليمية. حاصل على دبلومة في إدارة الأعمال (Diploma in Business Management) من معهد IAB البريطاني.
               <br><br>
               تجمع مسيرته بين الإدارة وضمان الجودة التعليمية؛ عمل مشرفاً أكاديمياً (Academic Supervisor) في Speakup Egypt، وموجهاً لغوياً (Language Mentor) في Berlitz لمراحل الكبار والأطفال والمراهقين، وشملت مسؤولياته تدريب المدرسين وعمل ورش لتطوير أدائهم ومتابعة جودة الحصص، إلى جانب خبرته كرئيس لقسم خدمة العملاء وتطوير نظم وسير العمل في Diwan Business Solutions. درّب متخصصين في مجالات الـ HR، التكنولوجيا المالية (Fintech)، الرعاية الصحية، والـ IT، موظفاً خبرته لتوفير بيئة تعليمية تفاعلية تركز على الممارسة الواقعية للغة.
             </p>
           </div>
+        </div>
 
-          <!-- 2. ريم يسري -->
-          <div class="team-card">
-            <img src="reem.jpeg" alt="ريم يسري" class="team-photo">
-            <h4 class="team-name">ريم يسري</h4>
-            <p class="team-role">Senior English Instructor · TEFL (MA Candidate)</p>
-            <p class="team-bio">
-              مُدرّسة لغة إنجليزية ومطورة مناهج بخبرة تقارب الـ 20 سنة في التعليم الجامعي وتدريس الإنجليزي كلغة أجنبية والتنسيق الأكاديمي. حاصلة على ليسانس لغات وترجمة بتقدير امتياز مع مرتبة الشرف من جامعة مصر للعلوم والتكنولوجيا (MUST)، وتُحضّر حالياً الماجستير في تدريس اللغة الإنجليزية كلغة أجنبية (TEFL) بالجامعة العربية المفتوحة.
-              <br><br>
-              تشمل خبرتها الأكاديمية تدريس وتنسيق كورسات الإنجليزي لطلبة الطب، إدارة الأعمال، والترجمة، مع تركيز خاص على تطوير مناهج مبنية على الإطار الأوروبي (CEFR). حاصلة على شهادات ودراسات متقدمة في علم النفس التربوي (جامعة عين شمس)، وتكنولوجيا التعليم والصحة النفسية (King's College London)، وتطبيقات الذكاء الاصطناعي في التعليم والبحث العلمي (جامعة النيل).
-            </p>
+        <!-- 3 TEACHERS IN A 3-COLUMN GRID WITH MINIMALIST BULLETS -->
+        <div class="grid-3">
+
+          <!-- 1. ريم يسري -->
+          <div class="teacher-card">
+            <img src="reem.jpeg" alt="ريم يسري" class="teacher-photo">
+            <h4 class="teacher-name">ريم يسري</h4>
+            <p class="teacher-role">Senior English Instructor · TEFL (MA Candidate)</p>
+            <ul class="team-bullets">
+              <li><strong>الخبرة:</strong> 20 سنة (تدريس جامعي، إشراف وتنسيق أكاديمي، وتطوير مناهج CEFR).</li>
+              <li><strong>ساعات التدريس:</strong> أكتر من 30,000 ساعة تدريس (إنجليزي أكاديمي ومتخصص لطلبة طب، إدارة أعمال، وترجمة).</li>
+              <li><strong>الشهادات والمؤهلات:</strong> ليسانس لغات وترجمة بامتياز مع مرتبة الشرف (MUST) | ماجستير TEFL قيد التحضير (AOU) | شهادات في علم النفس التربوي (عين شمس)، الصحة النفسية وتكنولوجيا التعليم (King's College London)، والذكاء الاصطناعي في التعليم (جامعة النيل).</li>
+            </ul>
           </div>
 
-          <!-- 3. منّة البسيوني -->
-          <div class="team-card">
-            <img src="menna.jpeg" alt="منّة البسيوني" class="team-photo">
-            <h4 class="team-name">منّة البسيوني</h4>
-            <p class="team-role">English Instructor & Simultaneous Interpreter · Applied Linguistics</p>
-            <p class="team-bio">
-              مُدرّسة لغة إنجليزية ومترجمة فورية، حاصلة على ليسانس في اللغة الإنجليزية واللغويات، ودبلومة دراسات عليا في اللغويات التطبيقية والترجمة، وباحثة ماجستير في نفس التخصص.
-              <br><br>
-              تمتلك خبرة واسعة في تدريس الكبار من مستوى A0 حتى C1 للشركات، القطاع الصناعي، ومجالات التعليم العام، مع خبرة سابقة في إدارة المجموعات الكبرى وتصميم دروس دقيقة تركّز على احتياجات المتعلم وسياقات العمل الواقعية. تجمع بين كفاءة التدريس والترجمة التحريرية والفورية بين اللغتين العربية والإنجليزية في قطاعات مهنية متعددة، مع اهتمام استثنائي بالفروق اللغوية الدقيقة وكسر حواجز التواصل.
-            </p>
+          <!-- 2. منّة البسيوني -->
+          <div class="teacher-card">
+            <img src="menna.jpeg" alt="منّة البسيوني" class="teacher-photo">
+            <h4 class="teacher-name">منّة البسيوني</h4>
+            <p class="teacher-role">English Instructor & Simultaneous Interpreter · Applied Linguistics</p>
+            <ul class="team-bullets">
+              <li><strong>الخبرة:</strong> 3 سنين في تدريس الكبار بمستويات (A0 حتى C1) للشركات، القطاع الصناعي، والتعليم العام | ترجمة فورية وتحريرية.</li>
+              <li><strong>ساعات التدريس:</strong> أكتر من 3000 ساعة تدريس (إدارة مجموعات كبيرة وتصميم محتوى مخصص لاحتياجات سوق العمل).</li>
+              <li><strong>الشهادات والمؤهلات:</strong> ليسانس لغة إنجليزية ولغويات | دبلومة دراسات عليا في اللغويات التطبيقية والترجمة | ماجستير قيد التحضير في نفس التخصص.</li>
+            </ul>
           </div>
 
-          <!-- 4. مُهرة حسام -->
-          <div class="team-card">
-            <img src="mohra.jpeg" alt="مُهرة حسام" class="team-photo">
-            <h4 class="team-name">مُهرة حسام</h4>
-            <p class="team-role">EFL Instructor (C1 Certified) · Child Development & Speech Specialist</p>
-            <p class="team-bio">
-              مُدرّسة لغة إنجليزية بمستوى C1 وخبرة أكثر من 4 سنوات في تدريس مختلف الفئات العمرية من الأطفال وحتى المراهقين والشباب.
-              <br><br>
-              تشمل مسيرتها التدريس المباشر في Ganah Kids، بالإضافة للتدريس أونلاين وأوفلاين في كبرى الأكاديميات مثل Berlitz و 4Level1 و Ai Language Academy. حاصلة على شهادات مهنية معتمدة في التخاطب وتعديل النطق، والإرشاد والتربية الأسرية. تدمج فهمها العميق لمراحل التطور الذهني واللغوي مع أساليب تدريس تفاعلية حديثة قائمة على الفنون والتطبيق الحركي، لمساعدة الطلاب على بناء الطلاقة اللغوية واستخدام الإنجليزية بدون تردد أو خوف.
-            </p>
+          <!-- 3. مُهرة حسام -->
+          <div class="teacher-card">
+            <img src="mohra.jpeg" alt="مُهرة حسام" class="teacher-photo">
+            <h4 class="teacher-name">مُهرة حسام</h4>
+            <p class="teacher-role">EFL Instructor (C1 Certified) · Child Development & Speech Specialist</p>
+            <ul class="team-bullets">
+              <li><strong>الخبرة:</strong> أكتر من 4 سنين في تدريس الأطفال والمراهقين (أونلاين وأوفلاين في Berlitz، و4Level1، وAi Language Academy، وGanah Kids).</li>
+              <li><strong>ساعات التدريس:</strong> أكتر من 2000 ساعة تدريس (تدريس تفاعلي قائم على الفنون، وبناء الطلاقة والنطق السليم).</li>
+              <li><strong>الشهادات والمؤهلات:</strong> شهادة إتقان لغة إنجليزية بمستوى C1 | شهادة معتمدة في التخاطب وتعديل النطق | شهادة معتمدة في الإرشاد وتعديل السلوك والتربية الأسرية.</li>
+            </ul>
           </div>
 
         </div>
@@ -663,12 +758,12 @@
       </div>
     </section>
 
-    <!-- 5. FORMSPREE ON-PAGE BOOKING SECTION -->
+    <!-- 5. FORMSPREE ON-PAGE BOOKING SECTION (WITH DYNAMIC CALENDAR & TIME DROPDOWN) -->
     <section id="booking" class="booking-section">
       <div class="booking-card">
         <span class="section-tag" style="display: table; margin: 0 auto 12px;">تسجيل فوري</span>
         <h2>احجز حصتك التجريبية مجاناً ✨</h2>
-        <p>املأ بياناتك وسيتواصل معك مدرب الأكاديمية خلال ساعتين لتحديد موعد اختبار المستوى والحصة المجانية المناسبة لجدولك.</p>
+        <p>املأ بياناتك وحدد موعدك المقترح وسيتواصل معك مدرب الأكاديمية لتأكيد موعد اختبار المستوى والحصة المجانية.</p>
 
         <!-- FORMSPREE FORM WITH BACKGROUND AJAX SUBMISSION -->
         <form action="https://formspree.io/f/xrpbavdj" method="POST" id="bookingForm">
@@ -676,6 +771,7 @@
           <!-- Formspree Anti-Spam Honeypot -->
           <input type="text" name="_gotcha" style="display:none">
 
+          <!-- Row 1: Name and Phone -->
           <div class="form-grid-2">
             <div class="form-group">
               <label class="form-label" for="studentName">الاسم بالكامل *</label>
@@ -688,6 +784,7 @@
             </div>
           </div>
 
+          <!-- Row 2: Study Mode and Package -->
           <div class="form-grid-2">
             <div class="form-group">
               <label class="form-label" for="studyMode">طريقة الحضور المفضلة</label>
@@ -704,6 +801,25 @@
                 <option value="برايفت برو (الأكثر طلباً)">برايفت برو (12 حصة فردية)</option>
                 <option value="برايفت ستارتر">برايفت ستارتر (8 حصص فردية)</option>
                 <option value="جروب تفاعلي">جروب تفاعلي (3 إلى 5 أفراد)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 3: Calendar Date Picker & Preferred Time Dropdown -->
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="trialDate">تاريخ الحصة التجريبية المقترح *</label>
+              <input type="date" id="trialDate" name="تاريخ_الحصة_المقترح" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="preferredTime">الوقت المفضل للحصة *</label>
+              <select id="preferredTime" name="الوقت_المفضل" class="form-control" required>
+                <option value="" disabled selected>اختر الوقت المناسب لك *</option>
+                <option value="صباحاً (10 ص - 2 ظ)">صباحاً (10 ص - 2 ظ)</option>
+                <option value="مساءً (6 م - 10 م)">مساءً (6 م - 10 م)</option>
+                <option value="مرن في أي وقت">مرن في أي وقت</option>
+                <option value="غير متأكد / محتاج استشارة">غير متأكد / محتاج استشارة</option>
               </select>
             </div>
           </div>
@@ -981,7 +1097,7 @@
 <!-- FLOATING WHATSAPP BUTTON -->
 <a href="https://wa.me/201017534096" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg></a>
 
-<!-- SCRIPT: SMOOTH JUMP WITHOUT URL HASH + ACTIVE SCROLLSPY + FORMSPREE AJAX SUBMISSION -->
+<!-- SCRIPT: SMOOTH JUMP WITHOUT URL HASH + ACTIVE SCROLLSPY + FORMSPREE AJAX SUBMISSION + DYNAMIC CALENDAR -->
 <script>
   const toggleBtn = document.getElementById('sidebarToggle');
   const sidebar = document.getElementById('leftSidebar');
@@ -1047,6 +1163,45 @@
       }
     });
   });
+
+  // =================================================================
+  // DYNAMIC TRIAL DATE CALENDAR RULES (MIN/MAX DATES)
+  // =================================================================
+  const trialDateInput = document.getElementById('trialDate');
+  if (trialDateInput) {
+    const today = new Date();
+    const dayOfWeek = today.getDay(); // 0: Sun, 1: Mon, ..., 4: Thu, 5: Fri, 6: Sat
+    
+    // Always block today and tomorrow (default +2 days)
+    let daysToAdd = 2;
+    
+    // If today is Thursday (4), earliest available day is Monday (+4 days)
+    // as coordinator doesn't contact clients on Fri/Sat weekends
+    if (dayOfWeek === 4) {
+      daysToAdd = 4;
+    } else if (dayOfWeek === 5) { // Friday -> Monday (+3)
+      daysToAdd = 3;
+    } else if (dayOfWeek === 6) { // Saturday -> Monday (+2)
+      daysToAdd = 2;
+    }
+
+    const minDate = new Date(today);
+    minDate.setDate(today.getDate() + daysToAdd);
+
+    // Maximum booking date: within next 14 days
+    const maxDate = new Date(today);
+    maxDate.setDate(today.getDate() + 14);
+
+    const toYMD = (d) => {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    };
+
+    trialDateInput.min = toYMD(minDate);
+    trialDateInput.max = toYMD(maxDate);
+  }
 
   // Formspree AJAX Submission with Instant Redirect to thank-you.html
   const bookingForm = document.getElementById('bookingForm');
