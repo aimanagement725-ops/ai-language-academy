@@ -195,53 +195,65 @@
 
     /* Grids & Cards */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 30px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 35px; }
     .card { background: var(--purple-light); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
     .card h3 { font-size: 18px; margin-bottom: 8px; font-weight: 800; }
     .card p { color: var(--text-mid); font-size: 14px; line-height: 1.7; }
 
-    /* Team Cards with Custom Photos */
+    /* ===== TEAM SECTION (2x2 GRID & ENHANCED IMAGE CLARITY) ===== */
+    .team-grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 30px;
+    }
     .team-card {
-      background: #faf8ff;
+      background: #ffffff;
       border: 1.5px solid var(--border);
       border-radius: 22px;
-      padding: 28px 20px;
+      padding: 30px 24px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      box-shadow: 0 4px 20px rgba(117,57,189,0.04);
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .team-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 35px rgba(117,57,189,0.09);
+      box-shadow: 0 12px 35px rgba(117,57,189,0.1);
     }
     .team-photo {
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--purple);
-      margin-bottom: 14px;
-      box-shadow: 0 6px 18px rgba(117, 57, 189, 0.15);
+      object-position: center 20%;
+      border: 3.5px solid var(--purple);
+      margin-bottom: 15px;
+      box-shadow: 0 6px 20px rgba(117, 57, 189, 0.15);
+      background-color: #f8fafc;
+      /* Image Rendering Optimizations for High Clarity */
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: auto;
     }
     .team-name {
-      font-size: 19px;
-      font-weight: 800;
+      font-size: 20px;
+      font-weight: 900;
       color: var(--text-dark);
       margin-bottom: 4px;
     }
     .team-role {
       color: var(--purple);
       font-weight: 700;
-      font-size: 12.5px;
-      margin-bottom: 12px;
+      font-size: 13px;
+      margin-bottom: 14px;
       line-height: 1.4;
     }
     .team-bio {
       color: var(--text-mid);
       font-size: 13.5px;
-      line-height: 1.7;
+      line-height: 1.75;
       text-align: right;
     }
 
@@ -370,7 +382,7 @@
     /* Responsive */
     @media (max-width: 950px) {
       .top-nav-links { display: none !important; }
-      .grid-3 { grid-template-columns: 1fr; }
+      .team-grid-2x2 { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 700px) {
@@ -381,7 +393,7 @@
       .cta-btn-nav { padding: 8px 14px; font-size: 12px; }
       .left-sidebar { position: fixed; left: -100%; top: 60px; z-index: 999; }
       .left-sidebar.mobile-open { left: 0; width: 260px; }
-      .pain-grid, .stats-strip, .grid-2, .form-grid-2 { grid-template-columns: 1fr; }
+      .pain-grid, .stats-strip, .grid-2, .grid-3, .form-grid-2 { grid-template-columns: 1fr; }
       .compare-table th, .compare-table td { padding: 10px; font-size: 13px; }
       .policy-table th, .policy-table td { padding: 10px; font-size: 12px; }
       .policy-box { padding: 20px 16px; }
@@ -475,45 +487,63 @@
       </div>
     </section>
 
-    <!-- 2. ABOUT & TEAM SECTION (WITH REAL PHOTOS & BIOS) -->
+    <!-- 2. ABOUT & TEAM SECTION (WITH ASSIM + ALL 4 INSTRUCTORS) -->
     <section id="about" style="background: #faf8ff;">
       <div class="section-inner">
         <span class="section-tag">من نحن</span>
         <h2 class="section-title">أكاديمية تركز على نتائجك العملية في الشغل</h2>
         <p class="section-subtitle">AI Language Academy هي أكاديمية متخصصة في تدريب اللغة الإنجليزية المهنية لسد فجوة التواصل الوظيفي لدى خريجي الجامعات والمحترفين. نعتمد منهجاً متوافقاً مع الإطار الأوروبي (CEFR) من A1 إلى C1 بنموذج مدمج (أونلاين لايف عبر Google Meet وحضوري في مقرنا بالمعادي).</p>
         
-        <h3 style="font-size: 24px; font-weight: 800; margin-top: 40px; text-align: center;">فريق المدربين والإشراف الأكاديمي</h3>
+        <h3 style="font-size: 24px; font-weight: 800; margin-top: 40px; text-align: center;">فريق العمل والمدربين</h3>
 
-        <!-- 3-MEMBER RESPONSIVE TEAM GRID -->
-        <div class="grid-3">
+        <!-- BALANCED 2x2 TEAM GRID -->
+        <div class="team-grid-2x2">
 
-          <!-- 1. ريم يسري -->
+          <!-- 1. عاصم هاني (Founder & Operations Manager) -->
           <div class="team-card">
-            <img src="reem.jpeg" alt="ريم يسري" class="team-photo">
-            <h4 class="team-name">ريم يسري</h4>
-            <p class="team-role">Academic Coordinator & Senior EFL Instructor · MA Candidate (TEFL)</p>
+            <img src="Assim%20Ibrahim.jpg" alt="عاصم هاني" class="team-photo">
+            <h4 class="team-name">عاصم هاني</h4>
+            <p class="team-role">Founder, Operations & Technical Manager | English Instructor</p>
             <p class="team-bio">
-              مُدرّسة لغة إنجليزية ومطورة مناهج بخبرة تقارب الـ 20 سنة في التعليم الجامعي وتدريس الإنجليزي كلغة أجنبية والتنسيق الأكاديمي. حاصلة على ليسانس لغات وترجمة بتقدير امتياز مع مرتبة الشرف (جامعة MUST)، وباحثة ماجستير TEFL بالجامعة العربية المفتوحة. خبرتها تشمل تطوير مناهج معتمدة على إطار CEFR، تدريس الإنجليزي الطبي وإدارة الأعمال، مع شهادات ودراسات متقدمة من King's College London، جامعة عين شمس، وجامعة النيل.
+              مدرّس إنجليزي معتمد، ومؤسس ومدير العمليات للأكاديمية، بخبرة أكثر من 6 سنوات في تدريس الإنجليزي وإدارة المنظومات التعليمية. حاصل على دبلومة في إدارة الأعمال (Diploma in Business Management) من معهد IAB البريطاني.
+              <br><br>
+              تجمع مسيرته بين الإدارة وضمان الجودة التعليمية؛ عمل مشرفاً أكاديمياً (Academic Supervisor) في Speakup Egypt، وموجهاً لغوياً (Language Mentor) في Berlitz لمراحل الكبار والأطفال والمراهقين، وشملت مسؤولياته تدريب المدرسين وعمل ورش لتطوير أدائهم ومتابعة جودة الحصص، إلى جانب خبرته كرئيس لقسم خدمة العملاء وتطوير نظم وسير العمل في Diwan Business Solutions. درّب متخصصين في مجالات الـ HR، التكنولوجيا المالية (Fintech)، الرعاية الصحية، والـ IT، موظفاً خبرته لتوفير بيئة تعليمية تفاعلية تركز على الممارسة الواقعية للغة.
             </p>
           </div>
 
-          <!-- 2. منّة البسيوني -->
+          <!-- 2. ريم يسري (Senior English Instructor) -->
+          <div class="team-card">
+            <img src="reem.jpeg" alt="ريم يسري" class="team-photo">
+            <h4 class="team-name">ريم يسري</h4>
+            <p class="team-role">Senior English Instructor · TEFL (MA Candidate)</p>
+            <p class="team-bio">
+              مُدرّسة لغة إنجليزية ومطورة مناهج بخبرة تقارب الـ 20 سنة في التعليم الجامعي وتدريس الإنجليزي كلغة أجنبية والتنسيق الأكاديمي. حاصلة على ليسانس لغات وترجمة بتقدير امتياز مع مرتبة الشرف من جامعة مصر للعلوم والتكنولوجيا (MUST)، وتُحضّر حالياً الماجستير في تدريس اللغة الإنجليزية كلغة أجنبية (TEFL) بالجامعة العربية المفتوحة.
+              <br><br>
+              تشمل خبرتها الأكاديمية تدريس وتنسيق كورسات الإنجليزي لطلبة الطب، إدارة الأعمال، والترجمة، مع تركيز خاص على تطوير مناهج مبنية على الإطار الأوروبي (CEFR). حاصلة على شهادات ودراسات متقدمة في علم النفس التربوي (جامعة عين شمس)، وتكنولوجيا التعليم والصحة النفسية (King's College London)، وتطبيقات الذكاء الاصطناعي في التعليم والبحث العلمي (جامعة النيل).
+            </p>
+          </div>
+
+          <!-- 3. منّة البسيوني (English Instructor) -->
           <div class="team-card">
             <img src="menna.jpeg" alt="منّة البسيوني" class="team-photo">
             <h4 class="team-name">منّة البسيوني</h4>
             <p class="team-role">English Instructor & Simultaneous Interpreter · Applied Linguistics</p>
             <p class="team-bio">
-              مُدرّسة لغة إنجليزية ومترجمة فورية، حاصلة على ليسانس في اللغة الإنجليزية واللغويات، ودبلومة دراسات عليا في اللغويات التطبيقية والترجمة، وباحثة ماجستير في نفس التخصص. تمتلك خبرة مميزة في تدريس الكبار من مستوى A0 حتى C1 للشركات، القطاع الصناعي، والتعليم العام، مع كفاءة في إدارة البرامج والمجموعات الكبرى، وتصميم دروس دقيقة تراعي الفروق اللغوية وسياقات العمل اليومية.
+              مُدرّسة لغة إنجليزية ومترجمة فورية، حاصلة على ليسانس في اللغة الإنجليزية واللغويات، ودبلومة دراسات عليا في اللغويات التطبيقية والترجمة، وباحثة ماجستير في نفس التخصص.
+              <br><br>
+              تمتلك خبرة واسعة في تدريس الكبار من مستوى A0 حتى C1 للشركات، القطاع الصناعي، ومجالات التعليم العام، مع خبرة سابقة في إدارة المجموعات الكبرى وتصميم دروس دقيقة تركّز على احتياجات المتعلم وسياقات العمل الواقعية. تجمع بين كفاءة التدريس والترجمة التحريرية والفورية بين اللغتين العربية والإنجليزية في قطاعات مهنية متعددة، مع اهتمام استثنائي بالفروق اللغوية الدقيقة وكسر حواجز التواصل.
             </p>
           </div>
 
-          <!-- 3. مُهرة حسام -->
+          <!-- 4. مُهرة حسام (EFL Instructor) -->
           <div class="team-card">
             <img src="mohra.jpeg" alt="مُهرة حسام" class="team-photo">
             <h4 class="team-name">مُهرة حسام</h4>
             <p class="team-role">EFL Instructor (C1 Certified) · Child Development & Speech Specialist</p>
             <p class="team-bio">
-              مُدرّسة لغة إنجليزية بمستوى C1 وخبرة تزيد عن 4 سنوات في تدريس مختلف الفئات العمرية. تشمل خبرتها التدريس المباشر في Ganah Kids، وتدريس الإنجليزية حضورياً وأونلاين في كبرى المعاهد مثل Berlitz و4Level1 وAi Language Academy. حاصلة على شهادات معتمدة في التخاطب وتعديل النطق والإرشاد الأسري، وتعتمد أساليب تفاعلية حديثة مبنية على الفنون والأنشطة التطبيقية لضمان أفضل استيعاب لغوي.
+              مُدرّسة لغة إنجليزية بمستوى C1 وخبرة أكثر من 4 سنوات في تدريس مختلف الفئات العمرية من الأطفال وحتى المراهقين والشباب.
+              <br><br>
+              تشمل مسيرتها التدريس المباشر في Ganah Kids، بالإضافة للتدريس أونلاين وأوفلاين في كبرى الأكاديميات مثل Berlitz و4Level1 وAi Language Academy. حاصلة على شهادات مهنية معتمدة في التخاطب وتعديل النطق، والإرشاد والتربية الأسرية. تدمج فهمها العميق لمراحل التطور الذهني واللغوي مع أساليب تدريس تفاعلية حديثة قائمة على الفنون والتطبيق الحركي، لمساعدة الطلاب على بناء الطلاقة اللغوية واستخدام الإنجليزية بدون تردد أو خوف.
             </p>
           </div>
 
@@ -968,7 +998,7 @@
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
     bookingForm.addEventListener('submit', async function(e) {
-      e.preventDefault(); // Stop default browser reload/redirect to formspree.io
+      e.preventDefault();
       
       const submitBtn = bookingForm.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn.innerHTML;
@@ -995,12 +1025,11 @@
           method: 'POST',
           body: formData,
           headers: {
-            'Accept': 'application/json' // Instructs Formspree to return silent JSON instead of their /thanks page
+            'Accept': 'application/json'
           }
         });
 
         if (response.ok) {
-          // Seamless redirect directly to your branded thank-you page!
           window.location.href = 'https://www.ailangacademy.com/thank-you.html';
         } else {
           alert('حدث خطأ أثناء إرسال الطلب، يرجى المحاولة مرة أخرى أو التواصل معنا عبر واتساب.');
