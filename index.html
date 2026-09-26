@@ -212,7 +212,7 @@
     .card h3 { font-size: 18px; margin-bottom: 8px; font-weight: 800; }
     .card p { color: var(--text-mid); font-size: 14px; line-height: 1.7; }
 
-    /* ===== TEAM SECTION (2x2 GRID & ENHANCED IMAGE CLARITY) ===== */
+    /* ===== TEAM SECTION ===== */
     .team-grid-2x2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -245,7 +245,6 @@
       margin-bottom: 15px;
       box-shadow: 0 6px 20px rgba(117, 57, 189, 0.15);
       background-color: #f8fafc;
-      /* Smooth bicubic rendering on all monitors */
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       transform: translateZ(0);
@@ -287,9 +286,19 @@
     .td-us { background: var(--purple-light); color: var(--purple); font-weight: 700; text-align: center; }
     .td-them { background: #fafafa; color: #dc2626; text-align: center; }
 
-    /* Reviews */
+    /* ===== REVIEWS & STARS ===== */
     .rev-card { background: var(--purple-light); border: 1px solid var(--border); border-radius: 18px; padding: 25px; }
     .rev-card.featured { background: var(--purple); color: #fff; }
+    .review-stars {
+      color: #f59e0b;
+      font-size: 19px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+    .rev-card.featured .review-stars {
+      color: #fcd34d;
+    }
     .rev-quote { font-style: italic; line-height: 1.8; margin-bottom: 16px; font-size: 15px; }
     .rev-author { display: flex; align-items: center; gap: 12px; }
     .rev-avatar { width: 42px; height: 42px; border-radius: 50%; background: #fff; color: var(--purple); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; }
@@ -392,9 +401,7 @@
     .whatsapp-float { position: fixed; bottom: 20px; left: 20px; z-index: 999; width: 54px; height: 54px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
     .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
 
-    /* ===== RESPONSIVE FIXES (PORTRAIT + LANDSCAPE) ===== */
-    
-    /* Mobile Landscape / Tablets (701px to 950px): Compact Nav Buttons */
+    /* ===== RESPONSIVE RULES ===== */
     @media (min-width: 701px) and (max-width: 950px) {
       .top-nav-links {
         display: flex;
@@ -406,7 +413,6 @@
       }
     }
 
-    /* Mobile Portrait (< 700px): Clean Header without Cramming */
     @media (max-width: 700px) {
       .top-header { padding: 0 12px; height: 60px; }
       .brand-logo span { display: none; }
@@ -416,7 +422,6 @@
       .cta-btn-nav { padding: 8px 14px; font-size: 12px; }
     }
 
-    /* Mobile Drawer Rules (<= 768px): Full Opacity, Correct Layering */
     @media (max-width: 768px) {
       .left-sidebar {
         position: fixed;
@@ -501,9 +506,10 @@
         <a href="#booking" class="btn-main js-jump-link">احجز حصة تجريبية مجاناً ✨</a>
       </div>
 
+      <!-- STATS STRIP (90%+) -->
       <div class="stats-strip">
         <div><div class="stat-num">8</div><div>مستويات CEFR معتمدة</div></div>
-        <div><div class="stat-num">100%</div><div>رضا الطلاب المشتركين</div></div>
+        <div><div class="stat-num">90%+</div><div>رضا الطلاب المشتركين</div></div>
         <div><div class="stat-num">أونلاين & أوفلاين</div><div>Google Meet + المعادي</div></div>
       </div>
 
@@ -529,7 +535,7 @@
       </div>
     </section>
 
-    <!-- 2. ABOUT & TEAM SECTION (WITH ASSIM IBRAHIM + INSTRUCTORS) -->
+    <!-- 2. ABOUT & TEAM SECTION -->
     <section id="about" style="background: #faf8ff;">
       <div class="section-inner">
         <span class="section-tag">من نحن</span>
@@ -541,7 +547,7 @@
         <!-- BALANCED 2x2 TEAM GRID -->
         <div class="team-grid-2x2">
 
-          <!-- 1. عاصم ابراهيم (Founder & Operations Manager) -->
+          <!-- 1. عاصم ابراهيم -->
           <div class="team-card">
             <img src="Assim%20Ibrahim.jpg" alt="عاصم ابراهيم" class="team-photo">
             <h4 class="team-name">عاصم ابراهيم</h4>
@@ -553,7 +559,7 @@
             </p>
           </div>
 
-          <!-- 2. ريم يسري (Senior English Instructor) -->
+          <!-- 2. ريم يسري -->
           <div class="team-card">
             <img src="reem.jpeg" alt="ريم يسري" class="team-photo">
             <h4 class="team-name">ريم يسري</h4>
@@ -565,7 +571,7 @@
             </p>
           </div>
 
-          <!-- 3. منّة البسيوني (English Instructor) -->
+          <!-- 3. منّة البسيوني -->
           <div class="team-card">
             <img src="menna.jpeg" alt="منّة البسيوني" class="team-photo">
             <h4 class="team-name">منّة البسيوني</h4>
@@ -577,7 +583,7 @@
             </p>
           </div>
 
-          <!-- 4. مُهرة حسام (EFL Instructor) -->
+          <!-- 4. مُهرة حسام -->
           <div class="team-card">
             <img src="mohra.jpeg" alt="مُهرة حسام" class="team-photo">
             <h4 class="team-name">مُهرة حسام</h4>
@@ -747,14 +753,16 @@
       </div>
     </section>
 
-    <!-- 7. STUDENT REVIEWS -->
+    <!-- 7. STUDENT REVIEWS (5/5 STARS FOR ALL) -->
     <section id="reviews" style="background: #faf8ff;">
       <div class="section-inner">
         <span class="section-tag">آراء حقيقية</span>
         <h2 class="section-title">تجارب طلابنا في تحسين مستواهم المهني</h2>
         
         <div class="grid-2">
+          <!-- Review 1 -->
           <div class="rev-card featured">
+            <div class="review-stars">★★★★★</div>
             <p class="rev-quote">"استفدت كتير، خصوصًا إني بدأت أستخدم الإنجليزي من أول سيشن. حاسس فعلًا إني اتقدمت وبقي عندي ثقة إني أتكلم من غير خوف قدام أي حد."</p>
             <div class="rev-author">
               <div class="rev-avatar">ع</div>
@@ -762,7 +770,9 @@
             </div>
           </div>
 
+          <!-- Review 2 -->
           <div class="rev-card">
+            <div class="review-stars">★★★★★</div>
             <p class="rev-quote">"كسرت حاجز الخوف عندي من اللغة نفسها. في شهر اكتسبت كام حاجه وساعدتني مع ابني في المذاكره وبدأت استخدم بعض كلمات في شغلي لا اراديًا."</p>
             <div class="rev-author">
               <div class="rev-avatar">إ</div>
@@ -770,7 +780,9 @@
             </div>
           </div>
 
+          <!-- Review 3 -->
           <div class="rev-card">
+            <div class="review-stars">★★★★★</div>
             <p class="rev-quote">"حسّنت من مستوايا بنسبة 50%. دلوقتي بقى عندي ثقة أكتر بنسبة 25% في استخدام الإنجليزي في الشغل. الكورس محتواه قوي وعملي."</p>
             <div class="rev-author">
               <div class="rev-avatar">م</div>
@@ -778,7 +790,9 @@
             </div>
           </div>
 
+          <!-- Review 4 -->
           <div class="rev-card">
+            <div class="review-stars">★★★★★</div>
             <p class="rev-quote">"كل جلسة مبنية على اللي قبلها وده ساعدني كتير. كنت مترددة في الأونلاين بس غيرت رأيي لأنك قدرت تخليها مريحة ومناسبة ليا."</p>
             <div class="rev-author">
               <div class="rev-avatar">س</div>
