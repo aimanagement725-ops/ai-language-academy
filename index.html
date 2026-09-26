@@ -168,7 +168,7 @@
     /* ===== MAIN CONTENT & SECTIONS ===== */
     .main-content { flex: 1; min-width: 0; order: 1; }
     section { padding: 65px 24px; scroll-margin-top: 70px; }
-    .section-inner { max-width: 900px; margin: 0 auto; }
+    .section-inner { max-width: 950px; margin: 0 auto; }
     .section-tag {
       display: inline-block; background: var(--purple-light); color: var(--purple);
       font-size: 12px; font-weight: 700; padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;
@@ -195,15 +195,55 @@
 
     /* Grids & Cards */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 35px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 30px; }
     .card { background: var(--purple-light); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
     .card h3 { font-size: 18px; margin-bottom: 8px; font-weight: 800; }
     .card p { color: var(--text-mid); font-size: 14px; line-height: 1.7; }
 
-    /* Team Cards */
-    .team-card { background: #faf8ff; border: 1px solid var(--border); border-radius: 20px; padding: 30px 20px; text-align: center; }
-    .team-avatar-icon { width: 75px; height: 75px; border-radius: 50%; background: var(--purple-light); border: 2px solid var(--purple); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; }
-    .team-avatar-icon svg { width: 36px; height: 36px; fill: none; stroke: var(--purple); stroke-width: 2; }
+    /* Team Cards with Custom Photos */
+    .team-card {
+      background: #faf8ff;
+      border: 1.5px solid var(--border);
+      border-radius: 22px;
+      padding: 28px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(117,57,189,0.09);
+    }
+    .team-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--purple);
+      margin-bottom: 14px;
+      box-shadow: 0 6px 18px rgba(117, 57, 189, 0.15);
+    }
+    .team-name {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .team-role {
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 12.5px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .team-bio {
+      color: var(--text-mid);
+      font-size: 13.5px;
+      line-height: 1.7;
+      text-align: right;
+    }
 
     /* Packages */
     .pkg-card { background: #faf8ff; border: 2px solid var(--border); border-radius: 20px; padding: 30px 20px; text-align: center; position: relative; }
@@ -267,9 +307,7 @@
     .policy-table th { background: var(--purple-light); color: var(--purple-dark); font-weight: 800; }
     .policy-table td.pct { font-weight: 800; color: var(--purple); }
 
-    /* ========================================= */
-    /* FORMSPREE ON-PAGE BOOKING CARD & FORM     */
-    /* ========================================= */
+    /* Booking Section */
     .booking-section {
       background: linear-gradient(135deg, #faf8ff 0%, #f3eeff 100%);
       padding: 80px 24px;
@@ -298,58 +336,21 @@
       text-align: center;
       margin-bottom: 30px;
     }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-label {
-      display: block;
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 8px;
-      color: var(--text-dark);
-    }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 8px; color: var(--text-dark); }
     .form-control {
-      width: 100%;
-      padding: 13px 16px;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      font-family: inherit;
-      font-size: 15px;
-      outline: none;
-      transition: all 0.2s ease;
-      background: #faf8ff;
-      color: var(--text-dark);
+      width: 100%; padding: 13px 16px; border: 1.5px solid var(--border);
+      border-radius: 12px; font-family: inherit; font-size: 15px; outline: none;
+      transition: all 0.2s ease; background: #faf8ff; color: var(--text-dark);
     }
-    .form-control:focus {
-      border-color: var(--purple);
-      background: #fff;
-      box-shadow: 0 0 0 4px rgba(117,57,189,0.1);
-    }
-    .form-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+    .form-control:focus { border-color: var(--purple); background: #fff; box-shadow: 0 0 0 4px rgba(117,57,189,0.1); }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .btn-submit-booking {
-      width: 100%;
-      padding: 16px;
-      background: var(--purple);
-      color: #fff;
-      border: none;
-      border-radius: 30px;
-      font-family: inherit;
-      font-size: 17px;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 8px 25px rgba(117,57,189,0.3);
-      transition: all 0.2s ease;
-      margin-top: 10px;
+      width: 100%; padding: 16px; background: var(--purple); color: #fff; border: none;
+      border-radius: 30px; font-family: inherit; font-size: 17px; font-weight: 800; cursor: pointer;
+      box-shadow: 0 8px 25px rgba(117,57,189,0.3); transition: all 0.2s ease; margin-top: 10px;
     }
-    .btn-submit-booking:hover {
-      background: var(--purple-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(117,57,189,0.4);
-    }
+    .btn-submit-booking:hover { background: var(--purple-dark); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(117,57,189,0.4); }
 
     /* Footer & Social */
     .footer { background: #0f0720; color: #94a3b8; padding: 35px 20px; text-align: center; font-size: 14px; margin-top: 40px; }
@@ -369,6 +370,7 @@
     /* Responsive */
     @media (max-width: 950px) {
       .top-nav-links { display: none !important; }
+      .grid-3 { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 700px) {
@@ -379,7 +381,7 @@
       .cta-btn-nav { padding: 8px 14px; font-size: 12px; }
       .left-sidebar { position: fixed; left: -100%; top: 60px; z-index: 999; }
       .left-sidebar.mobile-open { left: 0; width: 260px; }
-      .pain-grid, .stats-strip, .grid-2, .grid-3, .form-grid-2 { grid-template-columns: 1fr; }
+      .pain-grid, .stats-strip, .grid-2, .form-grid-2 { grid-template-columns: 1fr; }
       .compare-table th, .compare-table td { padding: 10px; font-size: 13px; }
       .policy-table th, .policy-table td { padding: 10px; font-size: 12px; }
       .policy-box { padding: 20px 16px; }
@@ -473,32 +475,48 @@
       </div>
     </section>
 
-    <!-- 2. ABOUT & TEAM SECTION -->
+    <!-- 2. ABOUT & TEAM SECTION (WITH REAL PHOTOS & BIOS) -->
     <section id="about" style="background: #faf8ff;">
       <div class="section-inner">
         <span class="section-tag">من نحن</span>
         <h2 class="section-title">أكاديمية تركز على نتائجك العملية في الشغل</h2>
         <p class="section-subtitle">AI Language Academy هي أكاديمية متخصصة في تدريب اللغة الإنجليزية المهنية لسد فجوة التواصل الوظيفي لدى خريجي الجامعات والمحترفين. نعتمد منهجاً متوافقاً مع الإطار الأوروبي (CEFR) من A1 إلى C1 بنموذج مدمج (أونلاين لايف عبر Google Meet وحضوري في مقرنا بالمعادي).</p>
         
-        <h3 style="font-size: 22px; font-weight: 800; margin-top: 30px;">فريق المدربين والإشراف الأكاديمي</h3>
-        <div class="team-grid">
+        <h3 style="font-size: 24px; font-weight: 800; margin-top: 40px; text-align: center;">فريق المدربين والإشراف الأكاديمي</h3>
+
+        <!-- 3-MEMBER RESPONSIVE TEAM GRID -->
+        <div class="grid-3">
+
+          <!-- 1. ريم يسري -->
           <div class="team-card">
-            <div class="team-avatar-icon">
-              <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">مدربو المحادثة والطلاقة</h4>
-            <p style="color: var(--purple); font-weight: 700; font-size: 13px; margin-bottom: 10px;">شهادات معتمدة CELTA & TEFL</p>
-            <p style="color: var(--text-light); font-size: 14px; line-height: 1.7;">خبراء متخصصون في كسر حاجز الرهبة اللغوية وتدريبك على مقابلات التوظيف والاجتماعات باللغة الإنجليزية من أول جلسة.</p>
+            <img src="reem.jpeg" alt="ريم يسري" class="team-photo">
+            <h4 class="team-name">ريم يسري</h4>
+            <p class="team-role">Academic Coordinator & Senior EFL Instructor · MA Candidate (TEFL)</p>
+            <p class="team-bio">
+              مُدرّسة لغة إنجليزية ومطورة مناهج بخبرة تقارب الـ 20 سنة في التعليم الجامعي وتدريس الإنجليزي كلغة أجنبية والتنسيق الأكاديمي. حاصلة على ليسانس لغات وترجمة بتقدير امتياز مع مرتبة الشرف (جامعة MUST)، وباحثة ماجستير TEFL بالجامعة العربية المفتوحة. خبرتها تشمل تطوير مناهج معتمدة على إطار CEFR، تدريس الإنجليزي الطبي وإدارة الأعمال، مع شهادات ودراسات متقدمة من King's College London، جامعة عين شمس، وجامعة النيل.
+            </p>
           </div>
 
+          <!-- 2. منّة البسيوني -->
           <div class="team-card">
-            <div class="team-avatar-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">فريق الإشراف وتقييم المستويات</h4>
-            <p style="color: var(--purple); font-weight: 700; font-size: 13px; margin-bottom: 10px;">منظومة CEFR الأوروبية</p>
-            <p style="color: var(--text-light); font-size: 14px; line-height: 1.7;">متابعة مستمرة عبر تقريرين تفصيليين لتقييم النطق والقواعد خلال كل راوند لضمان تطور مستواك خطوة بخطوة.</p>
+            <img src="menna.jpeg" alt="منّة البسيوني" class="team-photo">
+            <h4 class="team-name">منّة البسيوني</h4>
+            <p class="team-role">English Instructor & Simultaneous Interpreter · Applied Linguistics</p>
+            <p class="team-bio">
+              مُدرّسة لغة إنجليزية ومترجمة فورية، حاصلة على ليسانس في اللغة الإنجليزية واللغويات، ودبلومة دراسات عليا في اللغويات التطبيقية والترجمة، وباحثة ماجستير في نفس التخصص. تمتلك خبرة مميزة في تدريس الكبار من مستوى A0 حتى C1 للشركات، القطاع الصناعي، والتعليم العام، مع كفاءة في إدارة البرامج والمجموعات الكبرى، وتصميم دروس دقيقة تراعي الفروق اللغوية وسياقات العمل اليومية.
+            </p>
           </div>
+
+          <!-- 3. مُهرة حسام -->
+          <div class="team-card">
+            <img src="mohra.jpeg" alt="مُهرة حسام" class="team-photo">
+            <h4 class="team-name">مُهرة حسام</h4>
+            <p class="team-role">EFL Instructor (C1 Certified) · Child Development & Speech Specialist</p>
+            <p class="team-bio">
+              مُدرّسة لغة إنجليزية بمستوى C1 وخبرة تزيد عن 4 سنوات في تدريس مختلف الفئات العمرية. تشمل خبرتها التدريس المباشر في Ganah Kids، وتدريس الإنجليزية حضورياً وأونلاين في كبرى المعاهد مثل Berlitz و4Level1 وAi Language Academy. حاصلة على شهادات معتمدة في التخاطب وتعديل النطق والإرشاد الأسري، وتعتمد أساليب تفاعلية حديثة مبنية على الفنون والأنشطة التطبيقية لضمان أفضل استيعاب لغوي.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -567,9 +585,7 @@
       </div>
     </section>
 
-    <!-- ============================================================= -->
-    <!-- 5. FORMSPREE ON-PAGE BOOKING SECTION                          -->
-    <!-- ============================================================= -->
+    <!-- 5. FORMSPREE ON-PAGE BOOKING SECTION -->
     <section id="booking" class="booking-section">
       <div class="booking-card">
         <span class="section-tag" style="display: table; margin: 0 auto 12px;">تسجيل فوري</span>
@@ -853,7 +869,7 @@
           <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H7.9V12h2.6V9.8c0-2.6 1.5-4 3.9-4 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
         </a>
         <a href="https://www.instagram.com/ai.laguageacademy/" target="_blank" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.06 1.1.05 1.8.22 2.5.47a5 5 0 0 1 1.8 1.17 5 5 0 0 1 1.17 1.8c.25.7.42 1.4.47 2.5.05 1 .06 1.4.06 4.1s0 3.1-.06 4.1c-.05 1.1-.22 1.8-.47 2.5a5 5 0 0 1-1.17 1.8 5 5 0 0 1 1.8 1.17c-.7.25-1.4.42-2.5.47-1 .05-1.4.06-4.1.06s-3.1 0-4.1-.06c-1.1-.05-1.8-.22-2.5-.47a5 5 0 0 1-1.8-1.17 5 5 0 0 1-1.17-1.8c-.25-.7-.42-1.4-.47-2.5C2 15.1 2 14.7 2 12s0-3.1.06-4.1c.05-1.1.22-1.8.47-2.5a5 5 0 0 1 1.17-1.8A5 5 0 0 1 5.5 2.53c.7-.25 1.4-.42 2.5-.47C8.9 2 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.06 1.1.05 1.8.22 2.5.47a5 5 0 0 1 1.8 1.17 5 5 0 0 1 1.17 1.8c.25.7.42 1.4.47 2.5.05 1 .06 1.4.06 4.1s0 3.1-.06 4.1c-.05 1.1-.22 1.8-.47 2.5a5 5 0 0 1-1.17 1.8 5 5 0 0 1-1.8 1.17c-.7.25-1.4.42-2.5.47-1 .05-1.4.06-4.1.06s-3.1 0-4.1-.06c-1.1-.05-1.8-.22-2.5-.47a5 5 0 0 1-1.8-1.17 5 5 0 0 1-1.17-1.8c-.25-.7-.42-1.4-.47-2.5C2 15.1 2 14.7 2 12s0-3.1.06-4.1c.05-1.1.22-1.8.47-2.5a5 5 0 0 1 1.17-1.8A5 5 0 0 1 5.5 2.53c.7-.25 1.4-.42 2.5-.47C8.9 2 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>
         </a>
         <a href="https://wa.me/201017534096" target="_blank" aria-label="WhatsApp">
           <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg>
