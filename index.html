@@ -243,7 +243,7 @@
     .map-wrap iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
     .map-action-btn { display: inline-block; background: var(--purple); color: #fff; text-decoration: none; padding: 13px 28px; border-radius: 30px; font-weight: 700; font-size: 14px; margin-top: 10px; }
 
-    /* Horizontal Policy Blocks (Full-Width Flow) */
+    /* Horizontal Policy Blocks */
     .policy-box {
       background: #fff;
       border: 1px solid var(--border);
@@ -266,6 +266,90 @@
     .policy-table th, .policy-table td { padding: 14px 18px; font-size: 14px; text-align: right; border-bottom: 1px solid var(--border); }
     .policy-table th { background: var(--purple-light); color: var(--purple-dark); font-weight: 800; }
     .policy-table td.pct { font-weight: 800; color: var(--purple); }
+
+    /* ========================================= */
+    /* FORMSPREE ON-PAGE BOOKING CARD & FORM     */
+    /* ========================================= */
+    .booking-section {
+      background: linear-gradient(135deg, #faf8ff 0%, #f3eeff 100%);
+      padding: 80px 24px;
+    }
+    .booking-card {
+      max-width: 650px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 45px 35px;
+      border-radius: 24px;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 12px 45px rgba(117,57,189,0.08);
+      text-align: right;
+    }
+    .booking-card h2 {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .booking-card p {
+      color: var(--text-mid);
+      font-size: 15px;
+      line-height: 1.7;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+    }
+    .form-control {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.2s ease;
+      background: #faf8ff;
+      color: var(--text-dark);
+    }
+    .form-control:focus {
+      border-color: var(--purple);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(117,57,189,0.1);
+    }
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .btn-submit-booking {
+      width: 100%;
+      padding: 16px;
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(117,57,189,0.3);
+      transition: all 0.2s ease;
+      margin-top: 10px;
+    }
+    .btn-submit-booking:hover {
+      background: var(--purple-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(117,57,189,0.4);
+    }
 
     /* Footer & Social */
     .footer { background: #0f0720; color: #94a3b8; padding: 35px 20px; text-align: center; font-size: 14px; margin-top: 40px; }
@@ -295,10 +379,11 @@
       .cta-btn-nav { padding: 8px 14px; font-size: 12px; }
       .left-sidebar { position: fixed; left: -100%; top: 60px; z-index: 999; }
       .left-sidebar.mobile-open { left: 0; width: 260px; }
-      .pain-grid, .stats-strip, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .pain-grid, .stats-strip, .grid-2, .grid-3, .form-grid-2 { grid-template-columns: 1fr; }
       .compare-table th, .compare-table td { padding: 10px; font-size: 13px; }
       .policy-table th, .policy-table td { padding: 10px; font-size: 12px; }
       .policy-box { padding: 20px 16px; }
+      .booking-card { padding: 28px 18px; }
       section { padding: 40px 16px; scroll-margin-top: 60px; }
     }
   </style>
@@ -326,7 +411,7 @@
       <span>☰</span>
       <span class="btn-label">الصفحات</span>
     </button>
-    <a href="https://forms.gle/StuCpvrdM7G3LL6C7" target="_blank" class="cta-btn-nav">احجز مجاناً ✨</a>
+    <a href="#booking" class="cta-btn-nav js-jump-link">احجز مجاناً ✨</a>
   </div>
 </header>
 
@@ -339,6 +424,7 @@
       <li><a href="#about" class="sidebar-btn js-jump-link">👥 من نحن والفريق</a></li>
       <li><a href="#why" class="sidebar-btn js-jump-link">💡 منهجيتنا</a></li>
       <li><a href="#packages" class="sidebar-btn js-jump-link">💳 الباقات والأسعار</a></li>
+      <li><a href="#booking" class="sidebar-btn js-jump-link" style="color: var(--purple); font-weight: 800;">✍️ حجز حصة مجانية</a></li>
       <li><a href="#compare" class="sidebar-btn js-jump-link">⚖️ مقارنة المراكز</a></li>
       <li><a href="#reviews" class="sidebar-btn js-jump-link">⭐ آراء الطلاب</a></li>
       <li><a href="#faq" class="sidebar-btn js-jump-link">❓ الأسئلة الشائعة</a></li>
@@ -356,7 +442,7 @@
       <div class="hero">
         <h1 class="hero-title">تكلم إنجليزي<br><span>بثقة وبلا خوف</span></h1>
         <p class="hero-subtitle">كورسات إنجليزي مخصوصة لك — برايفت وجروبات صغيرة — بأسلوب عملي يركز على الكلام الحقيقي في الشغل والحياة اليومية.</p>
-        <a href="https://forms.gle/StuCpvrdM7G3LL6C7" target="_blank" class="btn-main">احجز حصة تجريبية مجاناً ✨</a>
+        <a href="#booking" class="btn-main js-jump-link">احجز حصة تجريبية مجاناً ✨</a>
       </div>
 
       <div class="stats-strip">
@@ -458,7 +544,7 @@
             <div class="pkg-price">1,350 <span style="font-size: 16px;">ج.م</span></div>
             <p style="color: var(--text-light); font-size: 13px;">8 حصص فردية (4 ساعات)</p>
             <p style="color: var(--text-mid); font-size: 14px; margin-top: 15px;">تركيز فردي 100% مع مدربك الخاص ومواد مخصصة لمستواك فقط.</p>
-            <a href="https://forms.gle/StuCpvrdM7G3LL6C7" target="_blank" class="pkg-btn">سجل الآن</a>
+            <a href="#booking" class="pkg-btn js-jump-link">سجل الآن</a>
           </div>
 
           <div class="pkg-card featured">
@@ -467,7 +553,7 @@
             <div class="pkg-price">2,000 <span style="font-size: 16px;">ج.م</span></div>
             <p style="font-size: 13px; opacity: 0.85;">12 حصة فردية (6 ساعات)</p>
             <p style="font-size: 14px; margin-top: 15px;">كورس مكثف مع تحضير خاص للإنترفيوهات واختبارين دوريين لتقييم تقدمك.</p>
-            <a href="https://forms.gle/StuCpvrdM7G3LL6C7" target="_blank" class="pkg-btn">سجل الآن</a>
+            <a href="#booking" class="pkg-btn js-jump-link">سجل الآن</a>
           </div>
 
           <div class="pkg-card">
@@ -475,13 +561,68 @@
             <div class="pkg-price">900–1,200 <span style="font-size: 16px;">ج.م</span></div>
             <p style="color: var(--text-light); font-size: 13px;">جروب صغير (3 إلى 5 أفراد)</p>
             <p style="color: var(--text-mid); font-size: 14px; margin-top: 15px;">تطبيق محادثة جماعي مرتين أسبوعياً (8 ساعات تدريب بالشهر).</p>
-            <a href="https://forms.gle/StuCpvrdM7G3LL6C7" target="_blank" class="pkg-btn">سجل الآن</a>
+            <a href="#booking" class="pkg-btn js-jump-link">سجل الآن</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. COMPARISON TABLE -->
+    <!-- ============================================================= -->
+    <!-- 5. FORMSPREE ON-PAGE BOOKING SECTION                          -->
+    <!-- ============================================================= -->
+    <section id="booking" class="booking-section">
+      <div class="booking-card">
+        <span class="section-tag" style="display: table; margin: 0 auto 12px;">تسجيل فوري</span>
+        <h2>احجز حصتك التجريبية مجاناً ✨</h2>
+        <p>املأ بياناتك وسيتواصل معك مدرب الأكاديمية خلال ساعتين لتحديد موعد اختبار المستوى والحصة المجانية المناسبة لجدولك.</p>
+
+        <!-- FORMSPREE FORM -->
+        <form action="https://formspree.io/f/xrpbavdj" method="POST" id="bookingForm">
+          
+          <!-- Redirect to thank-you.html after submission -->
+          <input type="hidden" name="_next" value="https://www.ailangacademy.com/thank-you.html">
+          
+          <!-- Formspree Anti-Spam Honeypot -->
+          <input type="text" name="_gotcha" style="display:none">
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="studentName">الاسم بالكامل *</label>
+              <input type="text" id="studentName" name="الاسم_بالكامل" class="form-control" placeholder="مثال: أحمد محمد" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="studentPhone">رقم الهاتف (واتساب) *</label>
+              <input type="tel" id="studentPhone" name="رقم_الواتساب" class="form-control" placeholder="مثال: 01012345678" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="studyMode">طريقة الحضور المفضلة</label>
+              <select id="studyMode" name="طريقة_الحضور" class="form-control">
+                <option value="أونلاين (Google Meet)">أونلاين لايف (Google Meet)</option>
+                <option value="أوفلاين (مقر المعادي)">أوفلاين (مقر المعادي أمام المترو)</option>
+                <option value="محتار ومحتاج استشارة">محتار ومحتاج استشارة في الحصة</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="selectedPackage">الباقة المهتم بها</label>
+              <select id="selectedPackage" name="الباقة_المختارة" class="form-control">
+                <option value="برايفت برو (الأكثر طلباً)">برايفت برو (12 حصة فردية)</option>
+                <option value="برايفت ستارتر">برايفت ستارتر (8 حصص فردية)</option>
+                <option value="جروب تفاعلي">جروب تفاعلي (3 إلى 5 أفراد)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit-booking">تأكيد حجز الحصة التجريبية مجاناً 🚀</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 6. COMPARISON TABLE -->
     <section id="compare">
       <div class="section-inner">
         <span class="section-tag">مقارنة صريحة</span>
@@ -521,7 +662,7 @@
       </div>
     </section>
 
-    <!-- 6. STUDENT REVIEWS -->
+    <!-- 7. STUDENT REVIEWS -->
     <section id="reviews" style="background: #faf8ff;">
       <div class="section-inner">
         <span class="section-tag">آراء حقيقية</span>
@@ -563,7 +704,7 @@
       </div>
     </section>
 
-    <!-- 7. FAQS ACCORDION -->
+    <!-- 8. FAQS ACCORDION -->
     <section id="faq">
       <div class="section-inner" style="max-width: 850px;">
         <span class="section-tag">إجابات فورية</span>
@@ -596,7 +737,7 @@
       </div>
     </section>
 
-    <!-- 8. LOCATION & MAP -->
+    <!-- 9. LOCATION & MAP -->
     <section id="location" style="background: #faf8ff; text-align: center;">
       <div class="section-inner">
         <span class="section-tag">مقرنا والوصول</span>
@@ -622,14 +763,13 @@
       </div>
     </section>
 
-    <!-- 9. CANCELLATION & REFUND POLICY SECTION (HORIZONTAL FULL-WIDTH CARDS) -->
+    <!-- 10. CANCELLATION & REFUND POLICY SECTION (HORIZONTAL FULL-WIDTH CARDS) -->
     <section id="refund" style="background: #ffffff;">
       <div class="section-inner">
         <span class="section-tag">الشفافية والضمان</span>
         <h2 class="section-title">سياسة الإلغاء والاسترداد المالي</h2>
         <p class="section-subtitle">نلتزم في AI Language Academy بأعلى درجات الوضوح والمرونة لحفظ حقوق طلابنا وضمان تجربة تعليمية مريحة وموثوقة.</p>
 
-        <!-- 1. Refund Schedule Table (Horizontal Box) -->
         <div class="policy-box">
           <h3>1. نسب الاسترداد المالي والجدول الزمني</h3>
           <p style="color: var(--text-mid); font-size: 14px; margin-bottom: 12px;">تُحدد نسبة المبلغ المسترد بدقة حسب توقيت تقديم طلب الإلغاء الرسمي للأكاديمية:</p>
@@ -662,7 +802,6 @@
           </table>
         </div>
 
-        <!-- 2. Alternatives (Horizontal Box) -->
         <div class="policy-box">
           <h3>2. بدائل الاسترداد المالي</h3>
           <ul style="color: var(--text-mid); font-size: 14px; line-height: 1.8; margin-right: 18px;">
@@ -671,7 +810,6 @@
           </ul>
         </div>
 
-        <!-- 3. Request Method (Horizontal Box) -->
         <div class="policy-box">
           <h3>3. طريقة تقديم الطلب ومعالجته</h3>
           <ul style="color: var(--text-mid); font-size: 14px; line-height: 1.8; margin-right: 18px;">
@@ -680,7 +818,6 @@
           </ul>
         </div>
 
-        <!-- 4. Private Sessions Rules (Horizontal Box) -->
         <div class="policy-box">
           <h3>4. قواعد وإجراءات الحصص الفردية (Private)</h3>
           <ul style="color: var(--text-mid); font-size: 14px; line-height: 1.8; margin-right: 18px;">
@@ -694,7 +831,7 @@
       </div>
     </section>
 
-    <!-- 10. PRIVACY POLICY SECTION -->
+    <!-- 11. PRIVACY POLICY SECTION -->
     <section id="privacy" style="background: #faf8ff;">
       <div class="section-inner" style="max-width: 800px; line-height: 1.8;">
         <span class="section-tag">سياسة البيانات</span>
@@ -816,22 +953,23 @@
   // META PIXEL STANDARD EVENTS IMPLEMENTATION
   // ==========================================
 
-  // 1. StartTrial & Lead Events (Triggered on trial booking form clicks)
-  document.querySelectorAll('a[href*="forms.gle"]').forEach(btn => {
-    btn.addEventListener('click', function() {
+  // 1. StartTrial & Lead Events (Triggered on on-page booking form submission)
+  const bookingForm = document.getElementById('bookingForm');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', function() {
       if (typeof fbq === 'function') {
         fbq('track', 'StartTrial', {
-          content_name: 'Free Trial Session',
+          content_name: 'Free Trial Session Formspree',
           content_category: 'English Training',
           currency: 'EGP',
           value: 0.00
         });
         fbq('track', 'Lead', {
-          content_name: 'Free Trial Registration Form'
+          content_name: 'Free Trial On-Page Submission'
         });
       }
     });
-  });
+  }
 
   // 2. Contact Event (Triggered on WhatsApp clicks)
   document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
