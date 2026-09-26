@@ -576,11 +576,8 @@
         <h2>احجز حصتك التجريبية مجاناً ✨</h2>
         <p>املأ بياناتك وسيتواصل معك مدرب الأكاديمية خلال ساعتين لتحديد موعد اختبار المستوى والحصة المجانية المناسبة لجدولك.</p>
 
-        <!-- FORMSPREE FORM -->
+        <!-- FORMSPREE FORM WITH BACKGROUND AJAX SUBMISSION -->
         <form action="https://formspree.io/f/xrpbavdj" method="POST" id="bookingForm">
-          
-          <!-- Redirect to thank-you.html after submission -->
-          <input type="hidden" name="_next" value="https://www.ailangacademy.com/thank-you.html">
           
           <!-- Formspree Anti-Spam Honeypot -->
           <input type="text" name="_gotcha" style="display:none">
@@ -856,7 +853,7 @@
           <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H7.9V12h2.6V9.8c0-2.6 1.5-4 3.9-4 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
         </a>
         <a href="https://www.instagram.com/ai.laguageacademy/" target="_blank" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.06 1.1.05 1.8.22 2.5.47a5 5 0 0 1 1.8 1.17 5 5 0 0 1 1.17 1.8c.25.7.42 1.4.47 2.5.05 1 .06 1.4.06 4.1s0 3.1-.06 4.1c-.05 1.1-.22 1.8-.47 2.5a5 5 0 0 1-1.17 1.8 5 5 0 0 1-1.8 1.17c-.7.25-1.4.42-2.5.47-1 .05-1.4.06-4.1.06s-3.1 0-4.1-.06c-1.1-.05-1.8-.22-2.5-.47a5 5 0 0 1-1.8-1.17 5 5 0 0 1-1.17-1.8c-.25-.7-.42-1.4-.47-2.5C2 15.1 2 14.7 2 12s0-3.1.06-4.1c.05-1.1.22-1.8.47-2.5a5 5 0 0 1 1.17-1.8A5 5 0 0 1 5.5 2.53c.7-.25 1.4-.42 2.5-.47C8.9 2 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.06 1.1.05 1.8.22 2.5.47a5 5 0 0 1 1.8 1.17 5 5 0 0 1 1.17 1.8c.25.7.42 1.4.47 2.5.05 1 .06 1.4.06 4.1s0 3.1-.06 4.1c-.05 1.1-.22 1.8-.47 2.5a5 5 0 0 1-1.17 1.8 5 5 0 0 1 1.8 1.17c-.7.25-1.4.42-2.5.47-1 .05-1.4.06-4.1.06s-3.1 0-4.1-.06c-1.1-.05-1.8-.22-2.5-.47a5 5 0 0 1-1.8-1.17 5 5 0 0 1-1.17-1.8c-.25-.7-.42-1.4-.47-2.5C2 15.1 2 14.7 2 12s0-3.1.06-4.1c.05-1.1.22-1.8.47-2.5a5 5 0 0 1 1.17-1.8A5 5 0 0 1 5.5 2.53c.7-.25 1.4-.42 2.5-.47C8.9 2 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>
         </a>
         <a href="https://wa.me/201017534096" target="_blank" aria-label="WhatsApp">
           <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg>
@@ -882,7 +879,7 @@
 <!-- FLOATING WHATSAPP BUTTON -->
 <a href="https://wa.me/201017534096" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg></a>
 
-<!-- SCRIPT: SMOOTH JUMP WITHOUT URL HASH + ACTIVE SCROLLSPY + ADVANCED META TRACKING -->
+<!-- SCRIPT: SMOOTH JUMP WITHOUT URL HASH + ACTIVE SCROLLSPY + FORMSPREE AJAX SUBMISSION -->
 <script>
   const toggleBtn = document.getElementById('sidebarToggle');
   const sidebar = document.getElementById('leftSidebar');
@@ -949,14 +946,20 @@
     });
   });
 
-  // ==========================================
-  // META PIXEL STANDARD EVENTS IMPLEMENTATION
-  // ==========================================
-
-  // 1. StartTrial & Lead Events (Triggered on on-page booking form submission)
+  // =================================================================
+  // FORMSPREE AJAX SUBMISSION WITH INSTANT REDIRECT TO thank-you.html
+  // =================================================================
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
-    bookingForm.addEventListener('submit', function() {
+    bookingForm.addEventListener('submit', async function(e) {
+      e.preventDefault(); // Stop default browser reload/redirect to formspree.io
+      
+      const submitBtn = bookingForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'جاري تسجيل طلبك... ⏳';
+
+      // Fire Meta Pixel Standard Events
       if (typeof fbq === 'function') {
         fbq('track', 'StartTrial', {
           content_name: 'Free Trial Session Formspree',
@@ -968,10 +971,35 @@
           content_name: 'Free Trial On-Page Submission'
         });
       }
+
+      const formData = new FormData(bookingForm);
+
+      try {
+        const response = await fetch('https://formspree.io/f/xrpbavdj', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json' // Instructs Formspree to return silent JSON instead of their /thanks page
+          }
+        });
+
+        if (response.ok) {
+          // Seamless redirect directly to your branded thank-you page!
+          window.location.href = 'https://www.ailangacademy.com/thank-you.html';
+        } else {
+          alert('حدث خطأ أثناء إرسال الطلب، يرجى المحاولة مرة أخرى أو التواصل معنا عبر واتساب.');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
+      } catch (error) {
+        alert('حدث خطأ في الاتصال، يرجى التواصل معنا مباشرة عبر واتساب.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
     });
   }
 
-  // 2. Contact Event (Triggered on WhatsApp clicks)
+  // Track WhatsApp Clicks as Meta "Contact" Event
   document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof fbq === 'function') {
@@ -983,7 +1011,7 @@
     });
   });
 
-  // 3. FindLocation Event (Triggered when user clicks Google Maps link to visit branch)
+  // Track Google Maps Clicks as Meta "FindLocation" Event
   document.querySelectorAll('a[href*="maps.app.goo.gl"], a[href*="maps.google.com"]').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof fbq === 'function') {
