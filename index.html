@@ -148,14 +148,26 @@
     }
     .cta-btn-nav:hover { background: var(--purple-dark); transform: translateY(-1px); }
 
-    /* ===== LAYOUT & SIDEBAR (CLOSED BY DEFAULT ON DESKTOP) ===== */
+    /* ===== LAYOUT & SIDEBAR ===== */
     .layout-wrap { display: flex; min-height: calc(100vh - 65px); }
     .left-sidebar {
       width: var(--sidebar-w); background: #faf8ff; border-right: 1px solid var(--border);
       position: sticky; top: 65px; height: calc(100vh - 65px); overflow-y: auto; padding: 24px 16px;
       order: 2; flex-shrink: 0; transition: width 0.3s ease, padding 0.3s ease, opacity 0.2s ease;
     }
-    .left-sidebar.collapsed { width: 0; padding: 0; opacity: 0; overflow: hidden; border-right: none; }
+
+    /* Desktop Collapsed state (Only applies to screens > 768px) */
+    @media (min-width: 769px) {
+      .left-sidebar.collapsed {
+        width: 0;
+        padding: 0;
+        opacity: 0;
+        overflow: hidden;
+        border-right: none;
+        pointer-events: none;
+      }
+    }
+
     .sidebar-menu { list-style: none; display: flex; flex-direction: column; gap: 6px; }
     .sidebar-btn {
       display: flex; align-items: center; gap: 10px; padding: 11px 14px; text-decoration: none;
@@ -233,9 +245,10 @@
       margin-bottom: 15px;
       box-shadow: 0 6px 20px rgba(117, 57, 189, 0.15);
       background-color: #f8fafc;
-      /* Image Rendering Optimizations for High Clarity */
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: auto;
+      /* Smooth bicubic rendering on all monitors */
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
     }
     .team-name {
       font-size: 20px;
@@ -379,21 +392,50 @@
     .whatsapp-float { position: fixed; bottom: 20px; left: 20px; z-index: 999; width: 54px; height: 54px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
     .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
 
-    /* Responsive */
-    @media (max-width: 950px) {
-      .top-nav-links { display: none !important; }
-      .team-grid-2x2 { grid-template-columns: 1fr; }
+    /* ===== RESPONSIVE FIXES (PORTRAIT + LANDSCAPE) ===== */
+    
+    /* Mobile Landscape / Tablets (701px to 950px): Compact Nav Buttons */
+    @media (min-width: 701px) and (max-width: 950px) {
+      .top-nav-links {
+        display: flex;
+        gap: 4px;
+      }
+      .top-nav-link {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
     }
 
+    /* Mobile Portrait (< 700px): Clean Header without Cramming */
     @media (max-width: 700px) {
       .top-header { padding: 0 12px; height: 60px; }
       .brand-logo span { display: none; }
+      .top-nav-links { display: none !important; }
       .sidebar-toggle-btn span.btn-label { display: none; }
       .sidebar-toggle-btn { padding: 7px 11px; font-size: 16px; }
       .cta-btn-nav { padding: 8px 14px; font-size: 12px; }
-      .left-sidebar { position: fixed; left: -100%; top: 60px; z-index: 999; }
-      .left-sidebar.mobile-open { left: 0; width: 260px; }
-      .pain-grid, .stats-strip, .grid-2, .grid-3, .form-grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* Mobile Drawer Rules (<= 768px): Full Opacity, Correct Layering */
+    @media (max-width: 768px) {
+      .left-sidebar {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        width: 270px;
+        height: calc(100vh - 60px);
+        z-index: 9999;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.25);
+        transition: left 0.3s ease;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .left-sidebar.mobile-open {
+        left: 0;
+      }
+      .team-grid-2x2, .pain-grid, .stats-strip, .grid-2, .grid-3, .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
       .compare-table th, .compare-table td { padding: 10px; font-size: 13px; }
       .policy-table th, .policy-table td { padding: 10px; font-size: 12px; }
       .policy-box { padding: 20px 16px; }
@@ -411,7 +453,7 @@
     <span>AI Language Academy</span>
   </a>
 
-  <!-- Center Quick Nav Buttons for Desktop -->
+  <!-- Center Quick Nav Buttons -->
   <nav class="top-nav-links" aria-label="التنقل السريع">
     <a href="#about" class="top-nav-link js-jump-link">من نحن والفريق</a>
     <a href="#packages" class="top-nav-link js-jump-link">الباقات والأسعار</a>
@@ -431,7 +473,7 @@
 
 <div class="layout-wrap">
 
-  <!-- LEFT SIDEBAR: CLOSED BY DEFAULT (has 'collapsed' class) -->
+  <!-- LEFT SIDEBAR: CLOSED BY DEFAULT ON DESKTOP -->
   <aside class="left-sidebar collapsed" id="leftSidebar">
     <ul class="sidebar-menu">
       <li><a href="#hero" class="sidebar-btn js-jump-link active">🏠 الرئيسية</a></li>
@@ -487,7 +529,7 @@
       </div>
     </section>
 
-    <!-- 2. ABOUT & TEAM SECTION (WITH ASSIM + ALL 4 INSTRUCTORS) -->
+    <!-- 2. ABOUT & TEAM SECTION (WITH ASSIM IBRAHIM + INSTRUCTORS) -->
     <section id="about" style="background: #faf8ff;">
       <div class="section-inner">
         <span class="section-tag">من نحن</span>
@@ -499,10 +541,10 @@
         <!-- BALANCED 2x2 TEAM GRID -->
         <div class="team-grid-2x2">
 
-          <!-- 1. عاصم هاني (Founder & Operations Manager) -->
+          <!-- 1. عاصم ابراهيم (Founder & Operations Manager) -->
           <div class="team-card">
-            <img src="Assim%20Ibrahim.jpg" alt="عاصم هاني" class="team-photo">
-            <h4 class="team-name">عاصم هاني</h4>
+            <img src="Assim%20Ibrahim.jpg" alt="عاصم ابراهيم" class="team-photo">
+            <h4 class="team-name">عاصم ابراهيم</h4>
             <p class="team-role">Founder, Operations & Technical Manager | English Instructor</p>
             <p class="team-bio">
               مدرّس إنجليزي معتمد، ومؤسس ومدير العمليات للأكاديمية، بخبرة أكثر من 6 سنوات في تدريس الإنجليزي وإدارة المنظومات التعليمية. حاصل على دبلومة في إدارة الأعمال (Diploma in Business Management) من معهد IAB البريطاني.
@@ -806,7 +848,7 @@
       </div>
     </section>
 
-    <!-- 10. CANCELLATION & REFUND POLICY SECTION (HORIZONTAL FULL-WIDTH CARDS) -->
+    <!-- 10. CANCELLATION & REFUND POLICY SECTION -->
     <section id="refund" style="background: #ffffff;">
       <div class="section-inner">
         <span class="section-tag">الشفافية والضمان</span>
@@ -934,14 +976,14 @@
 
   // Sidebar toggle button (laptop collapse vs mobile drawer)
   toggleBtn.addEventListener('click', function() {
-    if (window.innerWidth > 700) {
+    if (window.innerWidth > 768) {
       sidebar.classList.toggle('collapsed');
     } else {
       sidebar.classList.toggle('mobile-open');
     }
   });
 
-  // Intercept all in-page jump clicks to scroll cleanly WITHOUT adding # to the address bar
+  // Intercept in-page jump clicks to scroll cleanly WITHOUT adding # to address bar
   jumpLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -959,7 +1001,7 @@
             behavior: 'smooth'
           });
 
-          // Ensure URL stays completely clean as https://www.ailangacademy.com/
+          // Ensure URL stays completely clean
           if (window.location.hash) {
             window.history.replaceState(null, '', window.location.pathname + window.location.search);
           }
@@ -967,13 +1009,13 @@
       }
 
       // Close mobile drawer automatically when a section is clicked
-      if (window.innerWidth <= 700) {
+      if (window.innerWidth <= 768) {
         sidebar.classList.remove('mobile-open');
       }
     });
   });
 
-  // ScrollSpy: highlight the current section in the sidebar without touching the URL
+  // ScrollSpy: highlight the current section in the sidebar
   const sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
     let current = '';
@@ -992,9 +1034,7 @@
     });
   });
 
-  // =================================================================
-  // FORMSPREE AJAX SUBMISSION WITH INSTANT REDIRECT TO thank-you.html
-  // =================================================================
+  // Formspree AJAX Submission with Instant Redirect to thank-you.html
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
     bookingForm.addEventListener('submit', async function(e) {
