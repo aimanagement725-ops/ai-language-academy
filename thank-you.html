@@ -15,7 +15,7 @@
     gtag('config', 'G-4HLY3DT6F4');
   </script>
 
-  <!-- Meta Pixel Code with Lead Event -->
+  <!-- Meta Pixel Code with Verified Lead Event -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -27,13 +27,12 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1814758486181859');
     fbq('track', 'PageView');
-    fbq('track', 'Lead'); // Automatically fires Lead conversion event
+    fbq('track', 'Lead'); // Fires verified Lead on thank you landing
   </script>
   <noscript>
     <img height="1" width="1" style="display:none" 
          src="https://www.facebook.com/tr?id=1814758486181859&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Meta Pixel Code -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;900&display=swap" rel="stylesheet">
@@ -52,13 +51,13 @@
       direction: rtl;
     }
     .card {
-      max-width: 500px;
+      max-width: 520px;
       width: 100%;
       background: #1e293b;
-      padding: 45px 30px;
+      padding: 45px 32px;
       border-radius: 24px;
       border: 1px solid #334155;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 45px rgba(0,0,0,0.35);
     }
     .check-icon {
       width: 64px;
@@ -71,12 +70,12 @@
       justify-content: center;
       font-size: 32px;
       font-weight: 900;
-      margin: 0 auto 20px;
+      margin: 0 auto 18px;
     }
     h1 {
       font-size: 26px;
-      font-weight: 800;
-      margin-bottom: 12px;
+      font-weight: 900;
+      margin-bottom: 10px;
       color: #f8fafc;
     }
     .badge {
@@ -87,28 +86,59 @@
       border-radius: 30px;
       font-size: 13px;
       font-weight: 700;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
     p {
       color: #94a3b8;
       line-height: 1.8;
       font-size: 15px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
-    .btn {
+    .calendar-box {
+      background: rgba(117, 57, 189, 0.12);
+      border: 1.5px dashed #7539bd;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+    .calendar-box h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+    .calendar-box p {
+      font-size: 13px;
+      color: #cbd5e1;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+    .btn-calendar {
       display: inline-block;
       background: #7539bd;
       color: #fff;
       text-decoration: none;
-      padding: 13px 36px;
+      padding: 13px 30px;
       border-radius: 30px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 15px;
-      transition: 0.2s;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 20px rgba(117,57,189,0.3);
+      width: 100%;
     }
-    .btn:hover {
+    .btn-calendar:hover {
       background: #6028a0;
       transform: translateY(-2px);
+    }
+    .btn-home {
+      display: inline-block;
+      color: #94a3b8;
+      text-decoration: underline;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+    .btn-home:hover {
+      color: #fff;
     }
   </style>
 </head>
@@ -117,10 +147,42 @@
   <div class="card">
     <div class="check-icon">✓</div>
     <h1>تم تسجيل طلبك بنجاح!</h1>
-    <div class="badge">⚡ وعد الرد: خلال ساعتين عمل عبر واتساب</div>
-    <p>فريقنا هيتواصل معاك لتأكيد موعد اختبار تحديد المستوى والحصة التجريبية المجانية المناسبة لجدولك.</p>
-    <a href="/" class="btn">العودة للرئيسية</a>
+    <div class="badge">⚡ تأكيد فوري عبر واتساب</div>
+    
+    <p>تم إرسال بياناتك لمدرب الأكاديمية وسيتواصل معك خلال دقائق لتنسيق الحصة التجريبية واختبار تحديد المستوى.</p>
+
+    <!-- DYNAMIC CALENDAR BOOKING BOX -->
+    <div class="calendar-box">
+      <h3>📅 اختار ميعادك المناسب على تقويم جوجل مباشرة:</h3>
+      <p>لتأكيد حجز مكانك في جدول المدرب فوراً بدون انتظار:</p>
+      <a href="https://calendar.app.google/MNmRDY8FkWsTPA759" target="_blank" rel="noopener noreferrer" class="btn-calendar" id="calendarLinkBtn">
+        تحديد ميعاد الحصة على التقويم الآن ↗
+      </a>
+    </div>
+
+    <div>
+      <a href="/" class="btn-home">← العودة للصفحة الرئيسية</a>
+    </div>
   </div>
+
+  <script>
+    // Inspect URL parameter (?segment=adults or ?segment=teens) and inject the matching Google Calendar Schedule
+    const params = new URLSearchParams(window.location.search);
+    const segment = params.get('segment');
+    const calendarBtn = document.getElementById('calendarLinkBtn');
+
+    const ADULT_CALENDAR_LINK = 'https://calendar.app.google/MNmRDY8FkWsTPA759';
+    const TEEN_CALENDAR_LINK = 'https://calendar.app.google/kvYTLom5ibYCwk168';
+
+    if (segment === 'teens') {
+      calendarBtn.href = TEEN_CALENDAR_LINK;
+      calendarBtn.innerHTML = 'تحديد ميعاد الحصة (أقل من 21 سنة) على التقويم ↗';
+    } else {
+      // Default to Adults calendar
+      calendarBtn.href = ADULT_CALENDAR_LINK;
+      calendarBtn.innerHTML = 'تحديد ميعاد الحصة (كبار ومحترفون) على التقويم ↗';
+    }
+  </script>
 
 </body>
 </html>
