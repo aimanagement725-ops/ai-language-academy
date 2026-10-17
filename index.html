@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Language Academy | كورسات إنجليزي عملية للمحترفين بالمعادي وأونلاين</title>
   <link rel="icon" type="image/png" href="logo.png">
-  <meta name="description" content="AI Language Academy - كورسات إنجليزي مخصوصة برايفت وجروبات، أونلاين وأوف لاين في المعادي، منهج CEFR معتمد من A1 إلى C1. احجز حصتك التجريبية مجاناً.">
+  <meta name="description" content="AI Language Academy - كورسات إنجليزي مخصوصة للأفراد والشركات، أونلاين وأوف لاين بالمعادي، تدريب عملي مكثف وفق الإطار الأوروبي CEFR.">
   <link rel="canonical" href="https://www.ailangacademy.com/">
   
   <!-- URL Cleaner: Keeps the address bar clean (removes index.html & hashes) -->
@@ -27,7 +27,7 @@
     gtag('config', 'G-4HLY3DT6F4');
   </script>
 
-  <!-- Meta Pixel Code with PageView and ViewContent -->
+  <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -39,19 +39,15 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1814758486181859');
     fbq('track', 'PageView');
-    
-    // Meta Standard Event: ViewContent
     fbq('track', 'ViewContent', {
-      content_name: 'AI Language Academy Course Landing',
-      content_category: 'Education',
-      content_type: 'product'
+      content_name: 'AI Language Academy Landing Page',
+      content_category: 'Education'
     });
   </script>
   <noscript>
     <img height="1" width="1" style="display:none" 
          src="https://www.facebook.com/tr?id=1814758486181859&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Meta Pixel Code -->
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -114,26 +110,13 @@
     .brand-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 17px; color: var(--text-dark); flex-shrink: 0; cursor: pointer; }
     .brand-logo img { width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0; }
 
-    /* Desktop Navigation in Top Bar */
-    .top-nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+    /* Desktop Navigation */
+    .top-nav-links { display: flex; align-items: center; gap: 6px; }
     .top-nav-link {
-      color: var(--text-mid);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 8px 14px;
-      border-radius: 20px;
-      transition: all 0.2s ease;
-      white-space: nowrap;
+      color: var(--text-mid); text-decoration: none; font-size: 14px; font-weight: 700;
+      padding: 8px 14px; border-radius: 20px; transition: all 0.2s ease; white-space: nowrap;
     }
-    .top-nav-link:hover {
-      background: var(--purple-light);
-      color: var(--purple);
-    }
+    .top-nav-link:hover { background: var(--purple-light); color: var(--purple); }
 
     .top-header-left { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
     .sidebar-toggle-btn {
@@ -156,15 +139,9 @@
       order: 2; flex-shrink: 0; transition: width 0.3s ease, padding 0.3s ease, opacity 0.2s ease;
     }
 
-    /* Desktop Collapsed state (Only applies to screens > 768px) */
     @media (min-width: 769px) {
       .left-sidebar.collapsed {
-        width: 0;
-        padding: 0;
-        opacity: 0;
-        overflow: hidden;
-        border-right: none;
-        pointer-events: none;
+        width: 0; padding: 0; opacity: 0; overflow: hidden; border-right: none; pointer-events: none;
       }
     }
 
@@ -212,7 +189,7 @@
     .card h3 { font-size: 18px; margin-bottom: 8px; font-weight: 800; }
     .card p { color: var(--text-mid); font-size: 14px; line-height: 1.7; }
 
-    /* ===== ASSIM IBRAHIM (OPTION A: EXECUTIVE SPOTLIGHT BANNER) ===== */
+    /* ===== ASSIM IBRAHIM (EXECUTIVE SPOTLIGHT BANNER) ===== */
     .founder-card {
       background: #ffffff;
       border: 2px solid var(--purple);
@@ -226,125 +203,55 @@
       position: relative;
     }
     .founder-badge {
-      position: absolute;
-      top: -14px;
-      right: 30px;
-      background: var(--purple);
-      color: #ffffff;
-      padding: 4px 18px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 800;
+      position: absolute; top: -14px; right: 30px;
+      background: var(--purple); color: #ffffff;
+      padding: 4px 18px; border-radius: 20px;
+      font-size: 13px; font-weight: 800;
       box-shadow: 0 4px 15px rgba(117, 57, 189, 0.3);
     }
-    .founder-photo-wrap {
-      flex-shrink: 0;
-      text-align: center;
-    }
+    .founder-photo-wrap { flex-shrink: 0; text-align: center; }
     .founder-photo {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center 20%;
+      width: 140px; height: 140px; border-radius: 50%;
+      object-fit: cover; object-position: center 20%;
       border: 4px solid var(--purple);
       box-shadow: 0 8px 25px rgba(117, 57, 189, 0.2);
-      display: block;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      transform: translateZ(0);
+      display: block; background-color: #f8fafc;
+      -webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);
     }
-    .founder-content {
-      flex: 1;
-      text-align: right;
-    }
-    .founder-name {
-      font-size: 22px;
-      font-weight: 900;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-    .founder-role {
-      color: var(--purple);
-      font-weight: 700;
-      font-size: 13.5px;
-      margin-bottom: 14px;
-    }
-    .founder-bio {
-      color: var(--text-mid);
-      font-size: 14px;
-      line-height: 1.8;
-    }
+    .founder-content { flex: 1; text-align: right; }
+    .founder-name { font-size: 22px; font-weight: 900; color: var(--text-dark); margin-bottom: 4px; }
+    .founder-role { color: var(--purple); font-weight: 700; font-size: 13.5px; margin-bottom: 14px; }
+    .founder-bio { color: var(--text-mid); font-size: 14px; line-height: 1.8; }
 
-    /* ===== TEACHERS' CARDS WITH MINIMALIST BULLETS ===== */
+    /* ===== TEACHERS' CARDS ===== */
     .teacher-card {
-      background: #ffffff;
-      border: 1.5px solid var(--border);
-      border-radius: 20px;
-      padding: 26px 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background: #ffffff; border: 1.5px solid var(--border);
+      border-radius: 20px; padding: 26px 20px; text-align: center;
+      display: flex; flex-direction: column; align-items: center;
       box-shadow: 0 4px 20px rgba(117,57,189,0.04);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .teacher-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 35px rgba(117,57,189,0.1);
-    }
+    .teacher-card:hover { transform: translateY(-4px); box-shadow: 0 12px 35px rgba(117,57,189,0.1); }
     .teacher-photo {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center 20%;
-      border: 3.5px solid var(--purple);
-      margin-bottom: 14px;
-      box-shadow: 0 6px 20px rgba(117, 57, 189, 0.15);
-      background-color: #f8fafc;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      transform: translateZ(0);
+      width: 110px; height: 110px; border-radius: 50%;
+      object-fit: cover; object-position: center 20%;
+      border: 3.5px solid var(--purple); margin-bottom: 14px;
+      box-shadow: 0 6px 20px rgba(117, 57, 189, 0.15); background-color: #f8fafc;
+      -webkit-backface-visibility: hidden; backface-visibility: hidden; transform: translateZ(0);
     }
-    .teacher-name {
-      font-size: 19px;
-      font-weight: 900;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-    .teacher-role {
-      color: var(--purple);
-      font-weight: 700;
-      font-size: 12.5px;
-      margin-bottom: 14px;
-      line-height: 1.4;
-    }
+    .teacher-name { font-size: 19px; font-weight: 900; color: var(--text-dark); margin-bottom: 4px; }
+    .teacher-role { color: var(--purple); font-weight: 700; font-size: 12.5px; margin-bottom: 14px; line-height: 1.4; }
     .team-bullets {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0 0;
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
+      list-style: none; padding: 0; margin: 10px 0 0 0; text-align: right;
+      display: flex; flex-direction: column; gap: 10px; width: 100%;
     }
     .team-bullets li {
-      font-size: 13.5px;
-      color: var(--text-mid);
-      line-height: 1.65;
-      position: relative;
-      padding-right: 14px;
+      font-size: 13.5px; color: var(--text-mid); line-height: 1.65;
+      position: relative; padding-right: 14px;
     }
     .team-bullets li::before {
-      content: "•";
-      color: var(--purple);
-      font-size: 18px;
-      position: absolute;
-      right: 0;
-      top: -2px;
-      font-weight: bold;
+      content: "•"; color: var(--purple); font-size: 18px;
+      position: absolute; right: 0; top: -2px; font-weight: bold;
     }
 
     /* Packages */
@@ -364,19 +271,11 @@
     .td-us { background: var(--purple-light); color: var(--purple); font-weight: 700; text-align: center; }
     .td-them { background: #fafafa; color: #dc2626; text-align: center; }
 
-    /* Reviews */
+    /* Reviews & Stars */
     .rev-card { background: var(--purple-light); border: 1px solid var(--border); border-radius: 18px; padding: 25px; }
     .rev-card.featured { background: var(--purple); color: #fff; }
-    .review-stars {
-      color: #f59e0b;
-      font-size: 19px;
-      margin-bottom: 12px;
-      letter-spacing: 2px;
-      line-height: 1;
-    }
-    .rev-card.featured .review-stars {
-      color: #fcd34d;
-    }
+    .review-stars { color: #f59e0b; font-size: 19px; margin-bottom: 12px; letter-spacing: 2px; line-height: 1; }
+    .rev-card.featured .review-stars { color: #fcd34d; }
     .rev-quote { font-style: italic; line-height: 1.8; margin-bottom: 16px; font-size: 15px; }
     .rev-author { display: flex; align-items: center; gap: 12px; }
     .rev-avatar { width: 42px; height: 42px; border-radius: 50%; background: #fff; color: var(--purple); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; }
@@ -397,57 +296,27 @@
 
     /* Horizontal Policy Blocks */
     .policy-box {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px 30px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(117,57,189,0.04);
-      width: 100%;
+      background: #fff; border: 1px solid var(--border); border-radius: 18px;
+      padding: 28px 30px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(117,57,189,0.04); width: 100%;
     }
-    .policy-box h3 {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--purple-dark);
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .policy-box h3 { font-size: 18px; font-weight: 800; color: var(--purple-dark); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
     .policy-table { width: 100%; border-collapse: collapse; margin: 16px 0 6px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
     .policy-table th, .policy-table td { padding: 14px 18px; font-size: 14px; text-align: right; border-bottom: 1px solid var(--border); }
     .policy-table th { background: var(--purple-light); color: var(--purple-dark); font-weight: 800; }
     .policy-table td.pct { font-weight: 800; color: var(--purple); }
 
-    /* Booking Section */
+    /* ===== BOOKING SECTION & FORM ===== */
     .booking-section {
       background: linear-gradient(135deg, #faf8ff 0%, #f3eeff 100%);
       padding: 80px 24px;
     }
     .booking-card {
-      max-width: 680px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 45px 35px;
-      border-radius: 24px;
-      border: 1.5px solid var(--border);
-      box-shadow: 0 12px 45px rgba(117,57,189,0.08);
-      text-align: right;
+      max-width: 680px; margin: 0 auto; background: #ffffff;
+      padding: 45px 35px; border-radius: 24px; border: 1.5px solid var(--border);
+      box-shadow: 0 12px 45px rgba(117,57,189,0.08); text-align: right;
     }
-    .booking-card h2 {
-      font-size: 28px;
-      font-weight: 900;
-      color: var(--text-dark);
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .booking-card p {
-      color: var(--text-mid);
-      font-size: 15px;
-      line-height: 1.7;
-      text-align: center;
-      margin-bottom: 30px;
-    }
+    .booking-card h2 { font-size: 28px; font-weight: 900; color: var(--text-dark); margin-bottom: 10px; text-align: center; }
+    .booking-card p { color: var(--text-mid); font-size: 15px; line-height: 1.7; text-align: center; margin-bottom: 30px; }
     .form-group { margin-bottom: 20px; }
     .form-label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 8px; color: var(--text-dark); }
     .form-control {
@@ -456,6 +325,10 @@
       transition: all 0.2s ease; background: #faf8ff; color: var(--text-dark);
     }
     .form-control:focus { border-color: var(--purple); background: #fff; box-shadow: 0 0 0 4px rgba(117,57,189,0.1); }
+    .form-control.is-invalid { border-color: #ef4444 !important; background: #fff5f5 !important; }
+    .form-control.is-valid { border-color: #22c55e !important; }
+    .form-feedback { font-size: 12px; margin-top: 5px; display: none; }
+    .form-feedback.error { color: #ef4444; display: block; }
     .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .btn-submit-booking {
       width: 100%; padding: 16px; background: var(--purple); color: #fff; border: none;
@@ -481,14 +354,8 @@
 
     /* ===== RESPONSIVE RULES ===== */
     @media (min-width: 701px) and (max-width: 950px) {
-      .top-nav-links {
-        display: flex;
-        gap: 4px;
-      }
-      .top-nav-link {
-        padding: 6px 10px;
-        font-size: 12px;
-      }
+      .top-nav-links { display: flex; gap: 4px; }
+      .top-nav-link { padding: 6px 10px; font-size: 12px; }
     }
 
     @media (max-width: 700px) {
@@ -502,35 +369,16 @@
 
     @media (max-width: 768px) {
       .left-sidebar {
-        position: fixed;
-        left: -100%;
-        top: 60px;
-        width: 270px;
-        height: calc(100vh - 60px);
-        z-index: 9999;
+        position: fixed; left: -100%; top: 60px; width: 270px;
+        height: calc(100vh - 60px); z-index: 9999;
         box-shadow: 10px 0 30px rgba(0,0,0,0.25);
-        transition: left 0.3s ease;
-        opacity: 1 !important;
-        visibility: visible !important;
+        transition: left 0.3s ease; opacity: 1 !important; visibility: visible !important;
       }
-      .left-sidebar.mobile-open {
-        left: 0;
-      }
-      .founder-card {
-        flex-direction: column;
-        padding: 35px 20px 25px;
-        text-align: center;
-      }
-      .founder-content {
-        text-align: right;
-      }
-      .founder-badge {
-        right: 50%;
-        transform: translateX(50%);
-      }
-      .grid-3, .pain-grid, .stats-strip, .grid-2, .form-grid-2 {
-        grid-template-columns: 1fr;
-      }
+      .left-sidebar.mobile-open { left: 0; }
+      .founder-card { flex-direction: column; padding: 35px 20px 25px; text-align: center; }
+      .founder-content { text-align: right; }
+      .founder-badge { right: 50%; transform: translateX(50%); }
+      .grid-3, .pain-grid, .stats-strip, .grid-2, .form-grid-2 { grid-template-columns: 1fr; }
       .compare-table th, .compare-table td { padding: 10px; font-size: 13px; }
       .policy-table th, .policy-table td { padding: 10px; font-size: 12px; }
       .policy-box { padding: 20px 16px; }
@@ -548,7 +396,7 @@
     <span>AI Language Academy</span>
   </a>
 
-  <!-- Center Quick Nav Buttons -->
+  <!-- Center Quick Nav Buttons (Visible on Desktop / Landscape) -->
   <nav class="top-nav-links" aria-label="التنقل السريع">
     <a href="#about" class="top-nav-link js-jump-link">من نحن والفريق</a>
     <a href="#packages" class="top-nav-link js-jump-link">الباقات والأسعار</a>
@@ -634,7 +482,7 @@
         
         <h3 style="font-size: 24px; font-weight: 800; margin-top: 40px; text-align: center; margin-bottom: 30px;">فريق العمل والمدربين</h3>
 
-        <!-- ASSIM IBRAHIM: OPTION A EXECUTIVE SPOTLIGHT BANNER -->
+        <!-- ASSIM IBRAHIM: EXECUTIVE SPOTLIGHT BANNER -->
         <div class="founder-card">
           <div class="founder-badge">المؤسس ومدير العمليات</div>
           <div class="founder-photo-wrap">
@@ -651,7 +499,7 @@
           </div>
         </div>
 
-        <!-- 3 TEACHERS IN A 3-COLUMN GRID WITH MINIMALIST BULLETS -->
+        <!-- 3 TEACHERS IN A 3-COLUMN GRID -->
         <div class="grid-3">
 
           <!-- 1. ريم يسري -->
@@ -758,73 +606,74 @@
       </div>
     </section>
 
-    <!-- 5. FORMSPREE ON-PAGE BOOKING SECTION (WITH DYNAMIC CALENDAR & TIME DROPDOWN) -->
+    <!-- 5. SMART ON-PAGE BOOKING ENGINE -->
     <section id="booking" class="booking-section">
       <div class="booking-card">
-        <span class="section-tag" style="display: table; margin: 0 auto 12px;">تسجيل فوري</span>
+        <span class="section-tag" style="display: table; margin: 0 auto 12px;">تسجيل فوري مباشر</span>
         <h2>احجز حصتك التجريبية مجاناً ✨</h2>
-        <p>املأ بياناتك وحدد موعدك المقترح وسيتواصل معك مدرب الأكاديمية لتأكيد موعد اختبار المستوى والحصة المجانية.</p>
+        <p>املأ بياناتك وحدد موعدك وسيتواصل معك مدرب الأكاديمية لتأكيد ميعاد اختبار المستوى والاستشارة المجانية.</p>
 
-        <!-- FORMSPREE FORM WITH BACKGROUND AJAX SUBMISSION -->
-        <form action="https://formspree.io/f/xrpbavdj" method="POST" id="bookingForm">
+        <form id="bookingForm" novalidate>
           
-          <!-- Formspree Anti-Spam Honeypot -->
-          <input type="text" name="_gotcha" style="display:none">
-
-          <!-- Row 1: Name and Phone -->
+          <!-- Row 1: Name & Phone -->
           <div class="form-grid-2">
             <div class="form-group">
               <label class="form-label" for="studentName">الاسم بالكامل *</label>
-              <input type="text" id="studentName" name="الاسم_بالكامل" class="form-control" placeholder="مثال: أحمد محمد" required>
+              <input type="text" id="studentName" name="name" class="form-control" placeholder="مثال: أحمد محمد" required>
+              <div class="form-feedback" id="nameFeedback">يرجى كتابة اسمك بالكامل.</div>
             </div>
             
             <div class="form-group">
-              <label class="form-label" for="studentPhone">رقم الهاتف (واتساب) *</label>
-              <input type="tel" id="studentPhone" name="رقم_الواتساب" class="form-control" placeholder="مثال: 01012345678" required>
+              <label class="form-label" for="studentPhone">رقم الواتساب للتواصل *</label>
+              <input type="tel" id="studentPhone" name="phone" class="form-control" placeholder="01xxxxxxxxx" maxlength="11" required>
+              <div class="form-feedback" id="phoneFeedback">يرجى إدخال رقم محمول مصري صحيح (11 رقم يبدأ بـ 010 أو 011 أو 012 أو 015).</div>
             </div>
           </div>
 
-          <!-- Row 2: Study Mode and Package -->
+          <!-- Row 2: Age Question (Egyptian Arabic) & Study Mode -->
           <div class="form-grid-2">
             <div class="form-group">
+              <label class="form-label" for="studentAge">السن كام سنة؟ *</label>
+              <select id="studentAge" name="age_segment" class="form-control" required>
+                <option value="" disabled selected>اختر السن *</option>
+                <option value="adults">21 سنة أو أكتر</option>
+                <option value="teens">أقل من 21 سنة</option>
+              </select>
+              <div class="form-feedback" id="ageFeedback">يرجى اختيار السن للمساعدة في توجيهك للمدرب المختص.</div>
+            </div>
+
+            <div class="form-group">
               <label class="form-label" for="studyMode">طريقة الحضور المفضلة</label>
-              <select id="studyMode" name="طريقة_الحضور" class="form-control">
+              <select id="studyMode" name="study_mode" class="form-control">
                 <option value="أونلاين (Google Meet)">أونلاين لايف (Google Meet)</option>
                 <option value="أوفلاين (مقر المعادي)">أوفلاين (مقر المعادي أمام المترو)</option>
                 <option value="محتار ومحتاج استشارة">محتار ومحتاج استشارة في الحصة</option>
               </select>
             </div>
-
-            <div class="form-group">
-              <label class="form-label" for="selectedPackage">الباقة المهتم بها</label>
-              <select id="selectedPackage" name="الباقة_المختارة" class="form-control">
-                <option value="برايفت برو (الأكثر طلباً)">برايفت برو (12 حصة فردية)</option>
-                <option value="برايفت ستارتر">برايفت ستارتر (8 حصص فردية)</option>
-                <option value="جروب تفاعلي">جروب تفاعلي (3 إلى 5 أفراد)</option>
-              </select>
-            </div>
           </div>
 
-          <!-- Row 3: Calendar Date Picker & Preferred Time Dropdown -->
+          <!-- Row 3: Calendar Date Picker & Preferred Time -->
           <div class="form-grid-2">
             <div class="form-group">
               <label class="form-label" for="trialDate">تاريخ الحصة التجريبية المقترح *</label>
-              <input type="date" id="trialDate" name="تاريخ_الحصة_المقترح" class="form-control" required>
+              <input type="date" id="trialDate" name="proposed_date" class="form-control" required>
+              <div class="form-feedback" id="dateFeedback">يرجى اختيار التاريخ المقترح للحصة.</div>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="preferredTime">الوقت المفضل للحصة *</label>
-              <select id="preferredTime" name="الوقت_المفضل" class="form-control" required>
+              <select id="preferredTime" name="preferred_time" class="form-control" required>
                 <option value="" disabled selected>اختر الوقت المناسب لك *</option>
                 <option value="صباحاً (10 ص - 2 ظ)">صباحاً (10 ص - 2 ظ)</option>
                 <option value="مساءً (6 م - 10 م)">مساءً (6 م - 10 م)</option>
                 <option value="مرن في أي وقت">مرن في أي وقت</option>
                 <option value="غير متأكد / محتاج استشارة">غير متأكد / محتاج استشارة</option>
               </select>
+              <div class="form-feedback" id="timeFeedback">يرجى تحديد الوقت الأنسب لك.</div>
             </div>
           </div>
 
-          <button type="submit" class="btn-submit-booking">تأكيد حجز الحصة التجريبية مجاناً 🚀</button>
+          <button type="submit" class="btn-submit-booking" id="submitBtn">تأكيد حجز الحصة التجريبية مجاناً 🚀</button>
         </form>
       </div>
     </section>
@@ -869,7 +718,7 @@
       </div>
     </section>
 
-    <!-- 7. STUDENT REVIEWS (5/5 STARS FOR ALL) -->
+    <!-- 7. STUDENT REVIEWS (5/5 STARS) -->
     <section id="reviews" style="background: #faf8ff;">
       <div class="section-inner">
         <span class="section-tag">آراء حقيقية</span>
@@ -1097,14 +946,14 @@
 <!-- FLOATING WHATSAPP BUTTON -->
 <a href="https://wa.me/201017534096" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg></a>
 
-<!-- SCRIPT: SMOOTH JUMP WITHOUT URL HASH + ACTIVE SCROLLSPY + FORMSPREE AJAX SUBMISSION + DYNAMIC CALENDAR -->
+<!-- SCRIPT: SMOOTH JUMP, CALENDAR LOGIC, PHONE VALIDATION, & DUAL WEBHOOK (FORMSPREE + PRIVYR) -->
 <script>
   const toggleBtn = document.getElementById('sidebarToggle');
   const sidebar = document.getElementById('leftSidebar');
   const jumpLinks = document.querySelectorAll('.js-jump-link');
   const sidebarLinks = document.querySelectorAll('.sidebar-btn');
 
-  // Sidebar toggle button (laptop collapse vs mobile drawer)
+  // Sidebar toggle
   toggleBtn.addEventListener('click', function() {
     if (window.innerWidth > 768) {
       sidebar.classList.toggle('collapsed');
@@ -1113,7 +962,7 @@
     }
   });
 
-  // Intercept in-page jump clicks to scroll cleanly WITHOUT adding # to address bar
+  // Smooth scroll without changing address bar hash
   jumpLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -1131,21 +980,19 @@
             behavior: 'smooth'
           });
 
-          // Ensure URL stays completely clean
           if (window.location.hash) {
             window.history.replaceState(null, '', window.location.pathname + window.location.search);
           }
         }
       }
 
-      // Close mobile drawer automatically when a section is clicked
       if (window.innerWidth <= 768) {
         sidebar.classList.remove('mobile-open');
       }
     });
   });
 
-  // ScrollSpy: highlight the current section in the sidebar
+  // ScrollSpy
   const sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
     let current = '';
@@ -1165,18 +1012,17 @@
   });
 
   // =================================================================
-  // DYNAMIC TRIAL DATE CALENDAR RULES (MIN/MAX DATES)
+  // DYNAMIC CALENDAR (THURSDAYS TO MONDAY, BLOCK TODAY & TOMORROW)
   // =================================================================
   const trialDateInput = document.getElementById('trialDate');
   if (trialDateInput) {
     const today = new Date();
     const dayOfWeek = today.getDay(); // 0: Sun, 1: Mon, ..., 4: Thu, 5: Fri, 6: Sat
     
-    // Always block today and tomorrow (default +2 days)
+    // Always block today & tomorrow (+2 days default)
     let daysToAdd = 2;
     
-    // If today is Thursday (4), earliest available day is Monday (+4 days)
-    // as coordinator doesn't contact clients on Fri/Sat weekends
+    // If today is Thursday (4), earliest day is Monday (+4)
     if (dayOfWeek === 4) {
       daysToAdd = 4;
     } else if (dayOfWeek === 5) { // Friday -> Monday (+3)
@@ -1188,7 +1034,7 @@
     const minDate = new Date(today);
     minDate.setDate(today.getDate() + daysToAdd);
 
-    // Maximum booking date: within next 14 days
+    // Maximum 14 days in advance
     const maxDate = new Date(today);
     maxDate.setDate(today.getDate() + 14);
 
@@ -1203,49 +1049,203 @@
     trialDateInput.max = toYMD(maxDate);
   }
 
-  // Formspree AJAX Submission with Instant Redirect to thank-you.html
+  // =================================================================
+  // PHONE NUMBER AUTO-SANITIZER & VALIDATION
+  // =================================================================
+  const phoneInput = document.getElementById('studentPhone');
+  const phoneFeedback = document.getElementById('phoneFeedback');
+
+  function sanitizeEgyptianPhone(raw) {
+    if (!raw) return '';
+    // 1. Convert Arabic-Indic digits to Western digits
+    const arabicDigits = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+    let clean = raw.replace(/[٠-٩]/g, d => arabicDigits.indexOf(d));
+    
+    // 2. Remove all non-digit characters (spaces, dashes, parens)
+    clean = clean.replace(/\D/g, '');
+
+    // 3. Strip international prefixes (+20, 0020, 20)
+    if (clean.startsWith('0020')) clean = clean.substring(4);
+    else if (clean.startsWith('20')) clean = clean.substring(2);
+
+    // 4. Auto-prepend missing 0 if user started directly with 10, 11, 12, 15
+    if (clean.length === 10 && /^(10|11|12|15)/.test(clean)) {
+      clean = '0' + clean;
+    }
+
+    return clean;
+  }
+
+  const phoneBlacklist = [
+    '01012345678', '01234567890', '01000000000', '01111111111', 
+    '01222222222', '01555555555', '01099999999', '01100000000'
+  ];
+
+  function validatePhone(phone) {
+    const egRegex = /^(010|011|012|015)[0-9]{8}$/;
+    if (!egRegex.test(phone)) {
+      return { valid: false, msg: 'يرجى إدخال رقم هاتف محمول مصري صحيح مكون من 11 رقم (010/011/012/015).' };
+    }
+    if (phoneBlacklist.includes(phone) || /^01[0125](\d)\1{7}$/.test(phone)) {
+      return { valid: false, msg: 'برجاء إدخال رقم هاتفك الحقيقي لتتمكن الأكاديمية من تأكيد الحصة عبر واتساب.' };
+    }
+    return { valid: true };
+  }
+
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function() {
+      const sanitized = sanitizeEgyptianPhone(this.value);
+      this.value = sanitized;
+
+      if (sanitized.length === 11) {
+        const check = validatePhone(sanitized);
+        if (check.valid) {
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          phoneFeedback.classList.remove('error');
+        } else {
+          this.classList.remove('is-valid');
+          this.classList.add('is-invalid');
+          phoneFeedback.textContent = check.msg;
+          phoneFeedback.classList.add('error');
+        }
+      } else {
+        this.classList.remove('is-valid', 'is-invalid');
+        phoneFeedback.classList.remove('error');
+      }
+    });
+  }
+
+  // =================================================================
+  // FORM SUBMISSION: DUAL WEBHOOK (FORMSPREE + PRIVYR) + ROUTING
+  // =================================================================
   const bookingForm = document.getElementById('bookingForm');
+  const submitBtn = document.getElementById('submitBtn');
+
   if (bookingForm) {
     bookingForm.addEventListener('submit', async function(e) {
       e.preventDefault();
-      
-      const submitBtn = bookingForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'جاري تسجيل طلبك... ⏳';
 
-      // Fire Meta Pixel Standard Events
+      const nameVal = document.getElementById('studentName').value.trim();
+      const rawPhone = phoneInput.value.trim();
+      const phoneClean = sanitizeEgyptianPhone(rawPhone);
+      const ageSelect = document.getElementById('studentAge');
+      const ageVal = ageSelect.value;
+      const ageText = ageSelect.options[ageSelect.selectedIndex].text;
+      const modeVal = document.getElementById('studyMode').value;
+      const dateVal = document.getElementById('trialDate').value;
+      const timeVal = document.getElementById('preferredTime').value;
+
+      // Validation Checks
+      if (!nameVal) {
+        document.getElementById('studentName').classList.add('is-invalid');
+        document.getElementById('nameFeedback').classList.add('error');
+        return;
+      }
+
+      const phoneCheck = validatePhone(phoneClean);
+      if (!phoneCheck.valid) {
+        phoneInput.classList.add('is-invalid');
+        phoneFeedback.textContent = phoneCheck.msg;
+        phoneFeedback.classList.add('error');
+        phoneInput.focus();
+        return;
+      }
+
+      if (!ageVal) {
+        ageSelect.classList.add('is-invalid');
+        document.getElementById('ageFeedback').classList.add('error');
+        ageSelect.focus();
+        return;
+      }
+
+      if (!dateVal) {
+        document.getElementById('trialDate').classList.add('is-invalid');
+        document.getElementById('dateFeedback').classList.add('error');
+        return;
+      }
+
+      if (!timeVal) {
+        document.getElementById('preferredTime').classList.add('is-invalid');
+        document.getElementById('timeFeedback').classList.add('error');
+        return;
+      }
+
+      // Duplicate Prevention Check (15-minute throttle per phone number)
+      const lastSubmitKey = 'ai_sub_' + phoneClean;
+      const lastSubmitTime = localStorage.getItem(lastSubmitKey);
+      const nowTs = Date.now();
+      
+      if (lastSubmitTime && (nowTs - parseInt(lastSubmitTime, 10)) < 15 * 60 * 1000) {
+        alert('طلبك مسجل لدينا بالفعل! جارٍ تحويلك الآن إلى صفحة التأكيد وحجز موعدك.');
+        window.location.href = `https://www.ailangacademy.com/thank-you.html?segment=${ageVal}`;
+        return;
+      }
+
+      // UI Loading State
+      submitBtn.disabled = true;
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'جاري تسجيل طلبك وتجهيز المواعيد... ⏳';
+
+      // Meta Pixel Lead & StartTrial Events
       if (typeof fbq === 'function') {
         fbq('track', 'StartTrial', {
-          content_name: 'Free Trial Session Formspree',
-          content_category: 'English Training',
+          content_name: 'Trial Session Booking',
           currency: 'EGP',
           value: 0.00
         });
         fbq('track', 'Lead', {
-          content_name: 'Free Trial On-Page Submission'
+          content_name: 'Lead Form Submission',
+          content_category: ageVal === 'adults' ? 'Adults' : 'Teens'
         });
       }
 
-      const formData = new FormData(bookingForm);
+      // Prepare Formspree Payload
+      const formspreeData = new FormData();
+      formspreeData.append('الاسم', nameVal);
+      formspreeData.append('رقم_الواتساب', phoneClean);
+      formspreeData.append('السن', ageText);
+      formspreeData.append('طريقة_الحضور', modeVal);
+      formspreeData.append('تاريخ_مقترح', dateVal);
+      formspreeData.append('الوقت_المفضل', timeVal);
+
+      // Prepare Privyr Webhook Payload (Exact Tagging and Custom Fields)
+      const privyrTag = ageVal === 'adults' ? 'Adults' : 'Teens';
+      const privyrPayload = {
+        name: nameVal,
+        phone: phoneClean,
+        notes: `السن: ${ageText} | طريقة الحضور: ${modeVal} | ميعاد مقترح: ${dateVal} (${timeVal})`,
+        tags: [privyrTag],
+        other_fields: {
+          "السن": ageText,
+          "طريقة_الحضور": modeVal,
+          "تاريخ_الحصة_المقترح": dateVal,
+          "الوقت_المفضل": timeVal
+        }
+      };
 
       try {
-        const response = await fetch('https://formspree.io/f/xrpbavdj', {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
+        // Send to Formspree and Privyr in Parallel
+        await Promise.allSettled([
+          fetch('https://formspree.io/f/xrpbavdj', {
+            method: 'POST',
+            body: formspreeData,
+            headers: { 'Accept': 'application/json' }
+          }),
+          fetch('https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/0EP4kHYv', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(privyrPayload)
+          })
+        ]);
 
-        if (response.ok) {
-          window.location.href = 'https://www.ailangacademy.com/thank-you.html';
-        } else {
-          alert('حدث خطأ أثناء إرسال الطلب، يرجى المحاولة مرة أخرى أو التواصل معنا عبر واتساب.');
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnText;
-        }
-      } catch (error) {
+        // Record submission in localStorage to throttle duplicates
+        localStorage.setItem(lastSubmitKey, nowTs.toString());
+
+        // Dynamic Redirect to thank-you.html with age segment
+        window.location.href = `https://www.ailangacademy.com/thank-you.html?segment=${ageVal}`;
+
+      } catch (err) {
         alert('حدث خطأ في الاتصال، يرجى التواصل معنا مباشرة عبر واتساب.');
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
@@ -1253,25 +1253,19 @@
     });
   }
 
-  // Track WhatsApp Clicks as Meta "Contact" Event
+  // WhatsApp and Map Tracking
   document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof fbq === 'function') {
-        fbq('track', 'Contact', {
-          content_name: 'WhatsApp Consultation Chat',
-          contact_method: 'WhatsApp'
-        });
+        fbq('track', 'Contact', { content_name: 'WhatsApp Click' });
       }
     });
   });
 
-  // Track Google Maps Clicks as Meta "FindLocation" Event
   document.querySelectorAll('a[href*="maps.app.goo.gl"], a[href*="maps.google.com"]').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof fbq === 'function') {
-        fbq('track', 'FindLocation', {
-          content_name: 'Maadi Metro Branch Directions'
-        });
+        fbq('track', 'FindLocation', { content_name: 'Maadi Branch' });
       }
     });
   });
