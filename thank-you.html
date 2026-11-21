@@ -94,41 +94,50 @@
       font-size: 15px;
       margin-bottom: 25px;
     }
-    .calendar-box {
-      background: rgba(117, 57, 189, 0.12);
-      border: 1.5px dashed #7539bd;
-      border-radius: 16px;
-      padding: 20px;
+    .whatsapp-box {
+      background: rgba(37, 211, 102, 0.1);
+      border: 1.5px solid rgba(37, 211, 102, 0.3);
+      border-radius: 18px;
+      padding: 22px 20px;
       margin-bottom: 25px;
     }
-    .calendar-box h3 {
+    .whatsapp-box h3 {
       font-size: 16px;
       font-weight: 800;
-      color: #e2e8f0;
+      color: #f8fafc;
       margin-bottom: 6px;
     }
-    .calendar-box p {
-      font-size: 13px;
+    .whatsapp-box p {
+      font-size: 13.5px;
       color: #cbd5e1;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       line-height: 1.6;
     }
-    .btn-calendar {
-      display: inline-block;
-      background: #7539bd;
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
       color: #fff;
       text-decoration: none;
-      padding: 13px 30px;
+      padding: 14px 28px;
       border-radius: 30px;
       font-weight: 800;
       font-size: 15px;
       transition: all 0.2s ease;
-      box-shadow: 0 6px 20px rgba(117,57,189,0.3);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
       width: 100%;
     }
-    .btn-calendar:hover {
-      background: #6028a0;
+    .btn-whatsapp:hover {
+      background: #20ba5a;
       transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+    }
+    .btn-whatsapp svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
     }
     .btn-home {
       display: inline-block;
@@ -147,16 +156,17 @@
   <div class="card">
     <div class="check-icon">✓</div>
     <h1>تم تسجيل طلبك بنجاح!</h1>
-    <div class="badge">⚡ تأكيد فوري عبر واتساب</div>
+    <div class="badge">⚡ وعد الرد: خلال ساعتين عمل</div>
     
-    <p>تم إرسال بياناتك لمدرب الأكاديمية وسيتواصل معك خلال دقائق لتنسيق الحصة التجريبية واختبار تحديد المستوى.</p>
+    <p>تم إرسال بياناتك لمنسق الأكاديمية وسيتواصل معك عبر واتساب لتأكيد موعد الحصة التجريبية واختبار تحديد المستوى.</p>
 
-    <!-- DYNAMIC CALENDAR BOOKING BOX -->
-    <div class="calendar-box">
-      <h3>📅 اختار ميعادك المناسب على تقويم جوجل مباشرة:</h3>
-      <p>لتأكيد حجز مكانك في جدول المدرب فوراً بدون انتظار:</p>
-      <a href="https://calendar.app.google/MNmRDY8FkWsTPA759" target="_blank" rel="noopener noreferrer" class="btn-calendar" id="calendarLinkBtn">
-        تحديد ميعاد الحصة على التقويم الآن ↗
+    <!-- DIRECT WHATSAPP ACTION BOX -->
+    <div class="whatsapp-box">
+      <h3>💬 حابب تأكد حجزك فوراً بدون انتظار؟</h3>
+      <p>تقدر تبدأ محادثة مباشرة مع منسق الأكاديمية على واتساب الآن:</p>
+      <a href="https://wa.me/201017534096?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%B3%D8%AC%D9%84%D8%AA%20%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%D9%8A%20%D9%84%D8%AD%D8%AC%D8%B2%20%D8%A7%D9%84%D8%AD%D8%B5%D8%A9%20%D8%A7%D9%84%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9%20%D9%81%D9%8A%20AI%20Language%20Academy%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%A3%D9%83%D8%AF%20%D8%A7%D9%84%D9%85%D9%8A%D8%B9%D8%A7%D8%AF." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg>
+        <span>تواصل معنا فوراً عبر واتساب</span>
       </a>
     </div>
 
@@ -164,25 +174,6 @@
       <a href="/" class="btn-home">← العودة للصفحة الرئيسية</a>
     </div>
   </div>
-
-  <script>
-    // Inspect URL parameter (?segment=adults or ?segment=teens) and inject the matching Google Calendar Schedule
-    const params = new URLSearchParams(window.location.search);
-    const segment = params.get('segment');
-    const calendarBtn = document.getElementById('calendarLinkBtn');
-
-    const ADULT_CALENDAR_LINK = 'https://calendar.app.google/MNmRDY8FkWsTPA759';
-    const TEEN_CALENDAR_LINK = 'https://calendar.app.google/kvYTLom5ibYCwk168';
-
-    if (segment === 'teens') {
-      calendarBtn.href = TEEN_CALENDAR_LINK;
-      calendarBtn.innerHTML = 'تحديد ميعاد الحصة (أقل من 21 سنة) على التقويم ↗';
-    } else {
-      // Default to Adults calendar
-      calendarBtn.href = ADULT_CALENDAR_LINK;
-      calendarBtn.innerHTML = 'تحديد ميعاد الحصة (كبار ومحترفون) على التقويم ↗';
-    }
-  </script>
 
 </body>
 </html>
