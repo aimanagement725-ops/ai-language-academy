@@ -27,7 +27,7 @@
     gtag('config', 'G-4HLY3DT6F4');
   </script>
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code with PageView and ViewContent -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -39,6 +39,7 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1814758486181859');
     fbq('track', 'PageView');
+    
     fbq('track', 'ViewContent', {
       content_name: 'AI Language Academy Landing Page',
       content_category: 'Education'
@@ -396,7 +397,7 @@
     <span>AI Language Academy</span>
   </a>
 
-  <!-- Center Quick Nav Buttons (Visible on Desktop / Landscape) -->
+  <!-- Center Quick Nav Buttons -->
   <nav class="top-nav-links" aria-label="التنقل السريع">
     <a href="#about" class="top-nav-link js-jump-link">من نحن والفريق</a>
     <a href="#packages" class="top-nav-link js-jump-link">الباقات والأسعار</a>
@@ -630,7 +631,7 @@
             </div>
           </div>
 
-          <!-- Row 2: Age Question (Egyptian Arabic) & Study Mode -->
+          <!-- Row 2: Age Question & Study Mode -->
           <div class="form-grid-2">
             <div class="form-group">
               <label class="form-label" for="studentAge">السن كام سنة؟ *</label>
@@ -1117,7 +1118,7 @@
   }
 
   // =================================================================
-  // FORM SUBMISSION: DUAL WEBHOOK (FORMSPREE + PRIVYR) + ROUTING
+  // FORM SUBMISSION: DUAL WEBHOOK (FORMSPREE + PRIVYR) + REDIRECT
   // =================================================================
   const bookingForm = document.getElementById('bookingForm');
   const submitBtn = document.getElementById('submitBtn');
@@ -1177,15 +1178,15 @@
       const nowTs = Date.now();
       
       if (lastSubmitTime && (nowTs - parseInt(lastSubmitTime, 10)) < 15 * 60 * 1000) {
-        alert('طلبك مسجل لدينا بالفعل! جارٍ تحويلك الآن إلى صفحة التأكيد وحجز موعدك.');
-        window.location.href = `https://www.ailangacademy.com/thank-you.html?segment=${ageVal}`;
+        alert('طلبك مسجل لدينا بالفعل! جارٍ تحويلك الآن إلى صفحة التأكيد لتأكيد الحصة فوراً.');
+        window.location.href = 'https://www.ailangacademy.com/thank-you.html';
         return;
       }
 
       // UI Loading State
       submitBtn.disabled = true;
       const originalBtnText = submitBtn.innerHTML;
-      submitBtn.innerHTML = 'جاري تسجيل طلبك وتجهيز المواعيد... ⏳';
+      submitBtn.innerHTML = 'جاري تسجيل طلبك... ⏳';
 
       // Meta Pixel Lead & StartTrial Events
       if (typeof fbq === 'function') {
@@ -1242,8 +1243,8 @@
         // Record submission in localStorage to throttle duplicates
         localStorage.setItem(lastSubmitKey, nowTs.toString());
 
-        // Dynamic Redirect to thank-you.html with age segment
-        window.location.href = `https://www.ailangacademy.com/thank-you.html?segment=${ageVal}`;
+        // Redirect directly to the updated thank-you page
+        window.location.href = 'https://www.ailangacademy.com/thank-you.html';
 
       } catch (err) {
         alert('حدث خطأ في الاتصال، يرجى التواصل معنا مباشرة عبر واتساب.');
